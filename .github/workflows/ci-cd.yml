@@ -67,7 +67,7 @@ jobs:
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        continue-on-error: true
+      continue-on-error: true
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
