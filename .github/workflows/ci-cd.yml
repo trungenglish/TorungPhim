@@ -73,7 +73,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: build-files-${{ matrix.node-version }}
-        path: dist/
+        path: .next/
         retention-days: 5
 
   code-quality:
@@ -135,7 +135,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-files-20.x
-          path: dist
+          path: .next
 
       - name: Deploy to staging
         uses: amondnet/vercel-action@v25
@@ -161,7 +161,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: build-files-20.x
-        path: dist
+        path: .next
     
     - name: Deploy to production
       # Replace this with the appropriate deployment action for your platform
