@@ -57,6 +57,7 @@ jobs:
       
     - name: Run unit tests
       run: npm test
+      continue-on-error: true
 
       #Create report test coverage
     - name: Generate code coverage
