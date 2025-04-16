@@ -44,7 +44,7 @@ jobs:
 
       #Check if project uses typescript
     - name: Type check (TypeScript)
-      run: npm run type-check || true
+      run: npm run type-check
       continue-on-error: true
 
       #Security check of dependencies, alert if high-level vulnerabilities are detected
