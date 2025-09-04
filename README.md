@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Torung-Phim Web
 
-## Getting Started
+Frontend project structure for **Torung-Phim**.  
+This project follows a **feature-based architecture** for better scalability and maintainability.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📂 Folder Structure
+
+```text
+src/
+  app/            # Application setup (store, routes, providers)
+    store.ts      # Redux store or state management setup
+    router.tsx    # Application routes
+    providers/    # Global providers (theme, auth, query client, etc.)
+
+  components/     # Reusable UI components across the app
+    ui/           # Atomic UI components (Button, Input, Modal, etc.)
+    constants/    # Global constants used across components
+
+  features/       # Feature-based modules
+    auth/         # Example feature: Authentication
+      components/ # Feature-specific components
+      constants/  # Feature-specific constants
+      hooks/      # Feature-specific custom hooks
+      services/   # API calls for the feature
+      types/      # TypeScript types/interfaces for the feature
+    movie/        # Another feature (e.g., Movie listing)
+
+  hooks/          # Global custom hooks (used across multiple features)
+    useLocalStorage.ts
+
+  lib/            # Third-party or app-wide library configurations
+    axiosClient.ts# Axios config instance
+    i18n.ts       # Localization setup
+
+  services/       # Global services (not tied to a single feature)
+    uploadService.ts
+
+  types/          # Global TypeScript types & interfaces
+    User.ts
+    ApiResponse.ts
+
+  utils/          # Utility/helper functions
+    formatDate.ts
+    calculateDiscount.ts
+    storage.ts
+
+  index.tsx       # App entry point
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📖 Explanation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **app/**
+Holds global setup: state management, routing, and context providers.
 
-## Learn More
+### **components/**
+Contains **shared UI elements** and **global constants**.
 
-To learn more about Next.js, take a look at the following resources:
+### **features/**
+Encapsulates code **per feature/module** (Auth, Movies, Booking, etc.).  
+Each feature has its own `components`, `services`, `types`, etc
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **hooks/**
+Reusable custom hooks for multiple features.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **lib/**
+External library configs (Axios, i18n, Firebase, etc.).
 
-## Deploy on Vercel
+### **services/**
+Shared API services across features (e.g., file upload, payment).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **types/**
+Global TypeScript interfaces & types.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **utils/**
+Helper functions (date formatting, storage utilities, math helpers).
+
+---
+
+## 🚀 Getting Started
+
+1. Install dependencies:
+   ```sh
+   pnpm install
+   ```
+2. Start development server:
+   ```sh
+   pnpm dev
+   ```
+3. Build for production:
+   ```sh
+   pnpm build
+   ```
