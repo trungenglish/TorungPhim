@@ -1,55 +1,92 @@
-import { Menu, Search, User } from "lucide-react";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {Avatar, AvatarImage, AvatarFallback} from "@/components/ui/avatar";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faBars, faChevronDown, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     return (
-        <header className="fixed top-0 w-full z-50 bg-nav-background/95 backdrop-blur-md boder-border">
-            <div className="container flex items-center justify-between h-16 px-4 md:px-8">
-                {/* Logo */}
-                <div className="flex items-center gap-8">
+        <header className="fixed top-0 w-full z-50 bg-nav-background/95 backdrop-blur-md border-b border-border">
+            <div className="container-fluid flex items-center justify-between h-16 px-6">
+                {/* Logo and Menu Button */}
+                <div className="flex items-center gap-3">
+                    {/* Mobile menu - now on the left */}
+                    <Button variant="ghost" size="icon" className="hidden max-[1359px]:flex hover:bg-secondary">
+                        <FontAwesomeIcon icon={faBars} className="h-5 w-5" />
+                    </Button>
+
                     <a href="/" className="flex items-center gap-2 group">
-                        <div className="w-10 h-10 bg-primary rounded-3xl flex items-center justify-center group-hover:bg-primary-glow transition-colors">
+                        <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center group-hover:bg-primary-glow transition-colors">
                             <span className="text-primary-foreground font-bold text-xl">T</span>
                         </div>
-                        <span className="text-xl font-bold text-foreground hidden md:block">Torung</span>
+                        <div className="flex flex-col">
+                            <span className="text-balance font-bold text-foreground">TorungPhim</span>
+                            <span className="text-xs text-muted-foreground">Phim hay có đây</span>
+                        </div>
                     </a>
-                    {/* Nav */}
-                    <nav className="hidden lg:flex items-center gap-6">
-                        <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Chủ đề</a>
-                        <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Thể loại</a>
-                        <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Phim lẻ</a>
-                        <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Phim bộ</a>
-                        <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Xem chung</a>
-                        <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Quốc gia</a>
-                        <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Diễn viên</a>
-                        <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Lịch chiếu</a>
-                        <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Rổ bóng</a>
+                </div>
+
+                {/* Navigation and User Section */}
+                <div className="flex items-center gap-6 pl-3">
+                    {/* Navigation */}
+                    <nav className="hidden min-[1360px]:flex items-center gap-5">
+                        <a href="#" className="text-sm text-foreground hover:text-primary transition-colors">Chủ Đề</a>
+                        <div className="flex items-center gap-1 cursor-pointer group">
+                            <span className="text-sm text-foreground group-hover:text-primary transition-colors">Thể loại</span>
+                            <FontAwesomeIcon icon={faChevronDown} className="h-3 w-3 text-muted-foreground group-hover:text-primary transition-colors" />
+                        </div>
+                        <a href="#" className="text-sm text-foreground hover:text-primary transition-colors">Phim Lẻ</a>
+                        <a href="#" className="text-sm text-foreground hover:text-primary transition-colors">Phim Bộ</a>
+                        <a href="#" className="text-sm text-foreground hover:text-primary transition-colors">Xem Chung</a>
+                        <div className="flex items-center gap-1 cursor-pointer group">
+                            <span className="text-sm text-foreground group-hover:text-primary transition-colors">Quốc gia</span>
+                            <FontAwesomeIcon icon={faChevronDown} className="h-3 w-3 text-muted-foreground group-hover:text-primary transition-colors" />
+                        </div>
+                        <a href="#" className="text-sm text-foreground hover:text-primary transition-colors">Diễn Viên</a>
+                        <a href="#" className="text-sm text-foreground hover:text-primary transition-colors">Lịch chiếu</a>
+                        <div className="flex items-center gap-1 cursor-pointer group">
+                            <Badge className="bg-yellow-500 text-black hover:bg-yellow-500">
+                                NEW
+                            </Badge>
+                            <span className="text-sm text-foreground group-hover:text-primary transition-colors">Rổ bóng</span>
+                        </div>
+
                     </nav>
-                </div>
 
-                {/* Right section */}
-                <div className="flex items-center gap-4">
-                    {/* Search */}
-                    <div className="relative flex items-center">
-                    <Search className="absolute left-3 h-4 w-4 text-muted-foreground" />
-                    <Input
-                    type="search"
-                    placeholder="Tìm kiếm phim..."
-                    className="w-48 md:w-64 pl-10 bg-input border-border"
-                    />
+                    {/* Search Bar - Full width with gradual shrinking */}
+                    <div className="hidden min-[1360px]:block flex-shrink">
+                        <div className="relative">
+                            <FontAwesomeIcon icon={faSearch} className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                            <Input
+                                type="search"
+                                placeholder="Tìm kiếm phim, diễn viên"
+                                className="w-[190px] min-[1400px]:w-[2300px] min-[1500px]:w-[270px] pl-10 pr-4 h-10 bg-secondary/50 border-secondary hover:bg-secondary/70 focus:bg-secondary transition-all duration-200"
+                            />
+                        </div>
                     </div>
+
+                    {/* User Section - Hidden below 1360px */}
+                    <div className="hidden min-[1360px]:flex items-center gap-3">
+                        <Avatar className="h-8 w-8">
+                            <AvatarImage src="#" />
+                            <AvatarFallback>T</AvatarFallback>
+                        </Avatar>
+                        <div className="flex flex-col">
+                            <span className="text-xs text-muted-foreground">Tài ứng dụng</span>
+                            <span className="text-sm font-medium text-foreground">ToPhim</span>
+                        </div>
+                        <Button variant="outline" size="sm" className="rounded-full p-4 bg-white text-black">
+                            <FontAwesomeIcon icon={faUser} className="h-4 w-4 mr-1" />
+                            Thành viên
+                        </Button>
+                    </div>
+
+                    {/* Search Icon*/}
+                    <Button variant="ghost" size="icon" className="hidden max-[1359px]:flex hover:bg-secondary">
+                        <FontAwesomeIcon icon={faSearch} className="h-5 w-5" />
+                    </Button>
                 </div>
-
-                {/* User */}
-                <Button variant="ghost" size="icon" className="hover:bg-secondary">
-                <User className="h-5 w-5" />
-                </Button>
-
-                {/* Mobile menu */}
-                <Button variant="ghost" size="icon" className="lg:hidden hover:bg-secondary">
-                    <Menu className="h-5 w-5" />
-                </Button>
             </div>
         </header>
     )

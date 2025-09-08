@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import HeroSection from "@/features/home/components/HeroSection";
 
 export default function RootLayout({
   children,
@@ -11,7 +12,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header/>
-          {children}
+        <main className="pt-16">
+            {children}
+        </main>
         <Footer/>
       </body>
     </html>

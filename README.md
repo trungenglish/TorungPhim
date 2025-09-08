@@ -49,37 +49,6 @@ src/
   index.tsx       # App entry point
 ```
 
----
-
-## 📖 Explanation
-
-### **app/**
-Holds global setup: state management, routing, and context providers.
-
-### **components/**
-Contains **shared UI elements** and **global constants**.
-
-### **features/**
-Encapsulates code **per feature/module** (Auth, Movies, Booking, etc.).  
-Each feature has its own `components`, `services`, `types`, etc
-
-### **hooks/**
-Reusable custom hooks for multiple features.
-
-### **lib/**
-External library configs (Axios, i18n, Firebase, etc.).
-
-### **services/**
-Shared API services across features (e.g., file upload, payment).
-
-### **types/**
-Global TypeScript interfaces & types.
-
-### **utils/**
-Helper functions (date formatting, storage utilities, math helpers).
-
----
-
 ## 🚀 Getting Started
 
 1. Install dependencies:
