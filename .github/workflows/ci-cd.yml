@@ -93,6 +93,8 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v5.1.0
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
+          SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}
         continue-on-error: true
 
   #Automation tests
@@ -129,7 +131,9 @@ jobs:
     needs: [build-and-test, code-quality]
     if: github.ref == 'refs/heads/develop' && success()
     runs-on: ubuntu-latest
-    environment: staging
+    environment:
+      name: staging
+      url: https://torung-phim-staging.vercel.app
 
     steps:
       - name: Checkout code
@@ -149,6 +153,3 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-args: ''
-
-
-
