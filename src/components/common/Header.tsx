@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import {Avatar, AvatarImage, AvatarFallback} from "@/components/ui/avatar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBars, faChevronDown, faUser } from '@fortawesome/free-solid-svg-icons';
+import Link from "next/link";
 
 const Header = () => {
     return (
@@ -16,7 +17,7 @@ const Header = () => {
                         <FontAwesomeIcon icon={faBars} className="h-5 w-5" />
                     </Button>
 
-                    <a href="/" className="flex items-center gap-2 group">
+                    <Link href="/" className="flex items-center gap-2 group">
                         <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center group-hover:bg-primary-glow transition-colors">
                             <span className="text-primary-foreground font-bold text-xl">T</span>
                         </div>
@@ -24,27 +25,27 @@ const Header = () => {
                             <span className="text-balance font-bold text-foreground">TorungPhim</span>
                             <span className="text-xs text-muted-foreground">Phim hay có đây</span>
                         </div>
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Navigation and User Section */}
                 <div className="flex items-center gap-6 pl-3">
                     {/* Navigation */}
                     <nav className="hidden min-[1360px]:flex items-center gap-5">
-                        <a href="#" className="text-sm text-foreground hover:text-primary transition-colors">Chủ Đề</a>
+                        <Link href="#" className="text-sm text-foreground hover:text-primary transition-colors">Chủ Đề</Link>
                         <div className="flex items-center gap-1 cursor-pointer group">
                             <span className="text-sm text-foreground group-hover:text-primary transition-colors">Thể loại</span>
                             <FontAwesomeIcon icon={faChevronDown} className="h-3 w-3 text-muted-foreground group-hover:text-primary transition-colors" />
                         </div>
-                        <a href="#" className="text-sm text-foreground hover:text-primary transition-colors">Phim Lẻ</a>
-                        <a href="#" className="text-sm text-foreground hover:text-primary transition-colors">Phim Bộ</a>
-                        <a href="#" className="text-sm text-foreground hover:text-primary transition-colors">Xem Chung</a>
+                        <Link href="#" className="text-sm text-foreground hover:text-primary transition-colors">Phim Lẻ</Link>
+                        <Link href="#" className="text-sm text-foreground hover:text-primary transition-colors">Phim Bộ</Link>
+                        <Link href="#" className="text-sm text-foreground hover:text-primary transition-colors">Xem Chung</Link>
                         <div className="flex items-center gap-1 cursor-pointer group">
                             <span className="text-sm text-foreground group-hover:text-primary transition-colors">Quốc gia</span>
                             <FontAwesomeIcon icon={faChevronDown} className="h-3 w-3 text-muted-foreground group-hover:text-primary transition-colors" />
                         </div>
-                        <a href="#" className="text-sm text-foreground hover:text-primary transition-colors">Diễn Viên</a>
-                        <a href="#" className="text-sm text-foreground hover:text-primary transition-colors">Lịch chiếu</a>
+                        <Link href="#" className="text-sm text-foreground hover:text-primary transition-colors">Diễn Viên</Link>
+                        <Link href="#" className="text-sm text-foreground hover:text-primary transition-colors">Lịch chiếu</Link>
                         <div className="flex items-center gap-1 cursor-pointer group">
                             <Badge className="bg-yellow-500 text-black hover:bg-yellow-500">
                                 NEW
