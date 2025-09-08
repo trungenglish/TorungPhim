@@ -1,0 +1,33 @@
+name: Deploy to Staging
+
+on:
+  workflow_run:
+    workflows: [ "Frontend CI" ]
+    types:
+      - completed
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    environment: staging
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-files-22.x
+          path: .next
+
+      - name: Deploy to Vercel (Staging)
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-args: ''
