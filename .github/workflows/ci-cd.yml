@@ -129,7 +129,9 @@ jobs:
     needs: [build-and-test, code-quality]
     if: github.ref == 'refs/heads/develop' && success()
     runs-on: ubuntu-latest
-    environment: staging
+    environment:
+      name: staging
+      url: https://torung-phim-staging.vercel.app
 
     steps:
       - name: Checkout code
