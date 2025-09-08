@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "prepare": "husky",
-    "commit": "cz"
+    "commit": "cz",
+    "type-check": "tsc --noEmit"
   },
   "config": {
     "commitizen": {
