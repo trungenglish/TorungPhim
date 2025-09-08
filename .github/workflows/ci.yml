@@ -125,29 +125,30 @@ jobs:
         run: pnpm test:e2e || true
         continue-on-error: true
 
-#  deploy-staging:
-#    needs: [build-and-test, code-quality]
-#    if: github.ref == 'refs/heads/develop' && success()
-#    runs-on: ubuntu-latest
-#    environment: staging
-#
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v4
-#
-#      - name: Download build artifacts
-#        uses: actions/download-artifact@v4
-#        with:
-#          name: build-files-22.x
-#          path: .next
-#
-#      - name: Deploy to Vercel (Staging)
-#        uses: amondnet/vercel-action@v25
-#        with:
-#          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-#          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-#          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-#          github-token: ${{ secrets.GITHUB_TOKEN }}
-#          vercel-args: '--prod'
+  deploy-staging:
+    needs: [build-and-test, code-quality]
+    if: github.ref == 'refs/heads/develop' && success()
+    runs-on: ubuntu-latest
+    environment: staging
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-files-22.x
+          path: .next
+
+      - name: Deploy to Vercel (Staging)
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-args: ''
+
 
 
