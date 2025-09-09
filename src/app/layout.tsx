@@ -1,7 +1,6 @@
 import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import HeroSection from "@/features/home/components/HeroSection";
 
 export default function RootLayout({
   children,

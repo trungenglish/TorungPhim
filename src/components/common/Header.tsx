@@ -1,3 +1,5 @@
+"use client"
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -13,8 +15,8 @@ const Header = () => {
                 {/* Logo and Menu Button */}
                 <div className="flex items-center gap-3">
                     {/* Mobile menu - now on the left */}
-                    <Button variant="ghost" size="icon" className="hidden max-[1359px]:flex hover:bg-secondary">
-                        <FontAwesomeIcon icon={faBars} className="h-5 w-5" />
+                    <Button variant="ghost" className="hidden max-[1360px]:flex hover:bg-secondary">
+                        <FontAwesomeIcon icon={faBars} className="h-8 w-8" />
                     </Button>
 
                     <Link href="/" className="flex items-center gap-2 group">
@@ -62,7 +64,7 @@ const Header = () => {
                             <Input
                                 type="search"
                                 placeholder="Tìm kiếm phim, diễn viên"
-                                className="w-[190px] min-[1400px]:w-[2300px] min-[1500px]:w-[270px] pl-10 pr-4 h-10 bg-secondary/50 border-secondary hover:bg-secondary/70 focus:bg-secondary transition-all duration-200"
+                                className="w-[190px] min-[1400px]:w-[230px] min-[1500px]:w-[270px] pl-10 pr-4 h-10 bg-secondary/50 border-secondary hover:bg-secondary/70 focus:bg-secondary transition-all duration-200"
                             />
                         </div>
                     </div>
