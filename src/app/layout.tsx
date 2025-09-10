@@ -11,7 +11,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header/>
-        <main className="pt-16">
+        <main className="pt-16 max-w-screen-2xl mx-auto">
             {children}
         </main>
         <Footer/>
