@@ -33,7 +33,7 @@ const Header = () => {
                 {/* Navigation and User Section */}
                 <div className="flex items-center gap-6 pl-3">
                     {/* Navigation */}
-                    <nav className="hidden min-[1360px]:flex items-center gap-5">
+                    <nav className="hidden min-[1360px]:flex shrink-0 items-center gap-5">
                         <Link href="#" className="text-sm text-foreground hover:text-primary transition-colors">Chủ Đề</Link>
                         <div className="flex items-center gap-1 cursor-pointer group">
                             <span className="text-sm text-foreground group-hover:text-primary transition-colors">Thể loại</span>
@@ -58,13 +58,13 @@ const Header = () => {
                     </nav>
 
                     {/* Search Bar - Full width with gradual shrinking */}
-                    <div className="hidden min-[1360px]:block flex-shrink">
-                        <div className="relative">
+                    <div className="hidden min-[1360px]:flex min-w-0">
+                        <div className="relative w-[clamp(160px,20vw,270px)]">
                             <FontAwesomeIcon icon={faSearch} className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                             <Input
                                 type="search"
                                 placeholder="Tìm kiếm phim, diễn viên"
-                                className="w-[190px] min-[1400px]:w-[230px] min-[1500px]:w-[270px] pl-10 pr-4 h-10 bg-secondary/50 border-secondary hover:bg-secondary/70 focus:bg-secondary transition-all duration-200"
+                                className="w-full pl-10 pr-4 h-11 bg-secondary/50 border-secondary hover:bg-secondary/70 focus:bg-secondary transition-all duration-200"
                             />
                         </div>
                     </div>

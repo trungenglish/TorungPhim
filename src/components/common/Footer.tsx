@@ -7,7 +7,7 @@ import {faEnvelope, faPhone, faLocationDot} from "@fortawesome/free-solid-svg-ic
 
 const Footer = () => {
     return (
-        <footer className="bg-background border-t border-border">
+        <footer className="bg-background border-t border-border max-w-screen mx-auto">
             <div className="container px-4 md:px-8 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     {/* Logo and Description */}
@@ -67,11 +67,11 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li className="flex items-center gap-2">
                                 <FontAwesomeIcon icon={faEnvelope} className="text-primary h-4 w-4" />
-                                <span className="text-muted-foreground text-sm">info@ophim.tv</span>
+                                <span className="text-muted-foreground text-sm">nhmt1407@gmail.com</span>
                             </li>
                             <li className="flex items-center gap-2">
                                 <FontAwesomeIcon icon={faPhone} className="text-primary h-4 w-4" />
-                                <span className="text-muted-foreground text-sm">1900 1234</span>
+                                <span className="text-muted-foreground text-sm">00000000</span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <FontAwesomeIcon icon={faLocationDot} className="text-primary h-4 w-4 mt-0.5" />
