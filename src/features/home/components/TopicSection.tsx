@@ -11,7 +11,7 @@ interface TopicSectionProps {
 
 const TopicSection = ({topics}: TopicSectionProps) => {
   return (
-      <section className="p-6 text-foreground">
+      <section className="p-5 text-foreground">
           <div className="mb-5">
               <h3 className="text-3xl font-bold ">Bạn đang quan tâm gì?</h3>
           </div>
