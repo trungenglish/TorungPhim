@@ -3,70 +3,99 @@
 import { faAngleRight, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
-
 import { Swiper, SwiperSlide } from 'swiper/react'
-
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
 import { Navigation } from "swiper/modules"
+import "swiper/css";
+import "swiper/css/navigation";
+import { Titles } from "../constants/CountryMoviesCarousel"
 
 interface CountryMoviesCarouselProps {
-   
+    movies: {
+        id: string;
+        name: string;
+        enName: string;
+        image: string;
+    }[];
 }
 
-const CountryMoviesCarousel = () => {
+const CountryMoviesCarousel = ({movies}: CountryMoviesCarouselProps) => {
     return (
-        <section className="px-5 ">
-          <div className="bg-[#272a38] rounded-xl flex justify-between items-stretch mt-0 p-8">
-
-            <div className="flex items-center justify-between gap-4">
-
-              <div className="flex flex-col gap-6 pr-6 pl-2 shrink-0 grow max-w-[200px]">
-                <div 
-                    className="text-2xl font-bold bg-gradient-to-r from-[#674196] via-white to-white bg-clip-text text-transparent"
-                  >
-                    Phim Hàn Quốc mới
+        <section className="relative z-10 px-5 overflow-hidden">
+          <div className="bg-[linear-gradient(0deg,#282b3a00_20%,#282b3a)] rounded-xl flex flex-col justify-between items-stretch mt-0 p-8 gap-8">
+            {Titles.map((title) => (
+              <div key={title.id} className="flex items-center justify-between gap-4 relative">
+                {/* Title Section */}
+                <div className="flex flex-col gap-6 pr-6 pl-2 shrink-0 grow max-w-[200px]">
+                    <div 
+                       className={`text-2xl font-bold ${title.bgGradient} bg-clip-text text-transparent `}
+                      >
+                        {title.name}
+                    </div>
+                  <div>
+                    <Link href="#" className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors">
+                      <span>Xem toàn bộ</span>
+                      <FontAwesomeIcon icon={faAngleRight} size="sm"/>
+                    </Link>
+                  </div>
                 </div>
-                <div>
-                  <Link href="#">
-                    <span>Xem toàn bộ</span>
-                    <FontAwesomeIcon icon={faAngleRight} size="sm"/>
-                  </Link>
+
+                {/* Carousel Section */}
+                <div className="flex-1 min-w-0">
+                  <div className="absolute top-1/2 -translate-y-1/2 z-20 flex justify-between w-full">
+                    <button className={`nav-prev-${title.id} left-0 w-10 h-10 bg-white hover:bg-gray-50 rounded-full shadow-lg border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 text-gray-600 hover:text-gray-800 -ml-6 cursor-pointer`}>
+                      <FontAwesomeIcon icon={faChevronLeft} size="sm"/>
+                    </button>
+                    
+                    <button className={`nav-next-${title.id} right-0 w-10 h-10 bg-white hover:bg-gray-50 rounded-full shadow-lg border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 text-gray-600 hover:text-gray-800 mr-48 cursor-pointer`}>
+                      <FontAwesomeIcon icon={faChevronRight} size="sm"/>
+                    </button>
+                  </div>
+                  
+                  <Swiper
+                    modules={[Navigation]}
+                    slidesPerView="auto"         
+                    spaceBetween={16}
+                    slidesPerGroup={1}
+                    speed={400}
+                    navigation={{
+                      prevEl: `.nav-prev-${title.id}`,
+                      nextEl: `.nav-next-${title.id}`
+                    }}
+                    breakpoints={{
+                      320: {
+                        slidesPerView: "auto",
+                        spaceBetween: 16,
+                      },
+                      640: {
+                        slidesPerView: "auto",
+                        spaceBetween: 16,
+                      },
+                      1024: {
+                        slidesPerView: "auto",
+                        spaceBetween: 16,
+                      },
+                      1600: {
+                        slidesPerView: "auto",
+                        spaceBetween: 16,
+                      },
+                    }}
+                  >
+                    {movies.map(movie => (
+                      <SwiperSlide className="max-w-[395px]" key={movie.id}>
+                        <img
+                          className="rounded-xl"
+                          src={movie.image}
+                          alt={movie.name}
+                        />
+                        <h3>{movie.name}</h3>
+                        <p>{movie.enName}</p>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                  
                 </div>
               </div>
-
-              <Swiper
-                modules={[Navigation]}
-                navigation
-                spaceBetween={16}
-                slidesPerView={3}
-                onSlideChange={() => console.log('slide change')}
-                breakpoints={{
-                  320: { slidesPerView: 1.2, spaceBetween: 12 },
-                  640: { slidesPerView: 2, spaceBetween: 14 },
-                  1024: { slidesPerView: 3, spaceBetween: 16 },
-                  1440: { slidesPerView: 4, spaceBetween: 20 },
-                }}
-                onSwiper={(swiper) => console.log(swiper)}
-              >
-                <SwiperSlide>Slide 1</SwiperSlide>
-
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                
-              </Swiper>
-              
-            </div>
-
-
-            <div className="">
-
-            </div>
-            <div className="">
-              
-            </div>
+            ))}
           </div>
         </section>
     )

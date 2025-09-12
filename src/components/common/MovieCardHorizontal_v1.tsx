@@ -4,7 +4,7 @@
 const MovieCardHorizontal_v1 = () => {
     return (
         <div>
-
+        
         </div>
     )
 }

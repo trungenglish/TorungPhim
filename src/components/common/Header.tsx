@@ -49,7 +49,7 @@ const Header = () => {
                         <Link href="#" className="text-sm text-foreground hover:text-primary transition-colors">Diễn Viên</Link>
                         <Link href="#" className="text-sm text-foreground hover:text-primary transition-colors">Lịch chiếu</Link>
                         <div className="flex items-center gap-1 cursor-pointer group">
-                            <Badge className="bg-yellow-500 text-black hover:bg-yellow-500">
+                            <Badge className="bg-red-500 text-black hover:bg-yellow-500">
                                 NEW
                             </Badge>
                             <span className="text-sm text-foreground group-hover:text-primary transition-colors">Rổ bóng</span>
