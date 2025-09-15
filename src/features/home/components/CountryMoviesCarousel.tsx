@@ -8,6 +8,7 @@ import { Navigation } from "swiper/modules"
 import "swiper/css";
 import "swiper/css/navigation";
 import { Titles } from "../constants/CountryMoviesCarousel"
+import MovieCardHorizontalV1 from "@/components/common/MovieCardHorizontal_v1"
 
 interface CountryMoviesCarouselProps {
     movies: {
@@ -15,6 +16,9 @@ interface CountryMoviesCarouselProps {
         name: string;
         enName: string;
         image: string;
+        subtitleEp?: number;
+        dubbedEp?: number;
+        voicedEp?: number;
     }[];
 }
 
@@ -24,6 +28,7 @@ const CountryMoviesCarousel = ({movies}: CountryMoviesCarouselProps) => {
           <div className="bg-[linear-gradient(0deg,#282b3a00_20%,#282b3a)] rounded-xl flex flex-col justify-between items-stretch mt-0 p-8 gap-8">
             {Titles.map((title) => (
               <div key={title.id} className="flex items-center justify-between gap-4 relative">
+                
                 {/* Title Section */}
                 <div className="flex flex-col gap-6 pr-6 pl-2 shrink-0 grow max-w-[200px]">
                     <div 
@@ -41,7 +46,8 @@ const CountryMoviesCarousel = ({movies}: CountryMoviesCarouselProps) => {
 
                 {/* Carousel Section */}
                 <div className="flex-1 min-w-0">
-                  <div className="absolute top-1/2 -translate-y-1/2 z-20 flex justify-between w-full">
+                  {/* Navigation Buttons */}
+                  <div className="absolute top-[40%] -translate-y-1/2 z-20 flex justify-between w-full">
                     <button className={`nav-prev-${title.id} left-0 w-10 h-10 bg-white hover:bg-gray-50 rounded-full shadow-lg border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 text-gray-600 hover:text-gray-800 -ml-6 cursor-pointer`}>
                       <FontAwesomeIcon icon={faChevronLeft} size="sm"/>
                     </button>
@@ -81,14 +87,8 @@ const CountryMoviesCarousel = ({movies}: CountryMoviesCarouselProps) => {
                     }}
                   >
                     {movies.map(movie => (
-                      <SwiperSlide className="max-w-[395px]" key={movie.id}>
-                        <img
-                          className="rounded-xl"
-                          src={movie.image}
-                          alt={movie.name}
-                        />
-                        <h3>{movie.name}</h3>
-                        <p>{movie.enName}</p>
+                      <SwiperSlide className="max-w-[390px]" key={movie.id}>
+                        <MovieCardHorizontalV1 movie={movie} />
                       </SwiperSlide>
                     ))}
                   </Swiper>

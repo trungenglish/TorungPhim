@@ -8,15 +8,14 @@ import CountryMoviesCarousel from "@/features/home/components/CountryMoviesCarou
 import { MovieData } from "@/features/home/constants/CountryMoviesCarousel";
 
 export default function Home() {
+
+  
   return (
     <>
       <HeroSection movie={featuredMovie}/>
       <div className="flex flex-col gap-12 pb-16 max-w-screen">
           <TopicSection topics={topics} />
           <CountryMoviesCarousel movies={MovieData} />
-        {/*<MovieSection title="Phim Thịnh Hành" movies={trendingMovies} />*/}
-        {/*<MovieSection title="Phim Bộ Mới" movies={tvSeries} />*/}
-        {/*<MovieSection title="Anime Hay" movies={animeMovies} />*/}
       </div>
     </>
   );
