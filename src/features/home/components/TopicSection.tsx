@@ -1,5 +1,5 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faAngleRight, faChevronRight} from "@fortawesome/free-solid-svg-icons";
+import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
 
 interface TopicSectionProps {
     topics: {
@@ -11,7 +11,7 @@ interface TopicSectionProps {
 
 const TopicSection = ({topics}: TopicSectionProps) => {
   return (
-      <section className="p-6 text-foreground">
+      <section className="px-5 text-foreground">
           <div className="mb-5">
               <h3 className="text-3xl font-bold ">Bạn đang quan tâm gì?</h3>
           </div>

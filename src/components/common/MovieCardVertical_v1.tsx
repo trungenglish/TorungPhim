@@ -1,8 +1,5 @@
 'use client';
 
-interface MovieCardProps {
-
-}
 
 const MovieCard = () => {
     return (
