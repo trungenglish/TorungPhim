@@ -6,6 +6,7 @@ import TopicSection from "@/features/home/components/TopicSection";
 import { topics } from "@/features/home/constants/topics";
 import CountryMoviesCarousel from "@/features/home/components/CountryMoviesCarousel";
 import { MovieData } from "@/features/home/constants/CountryMoviesCarousel";
+import Community from "@/features/home/components/Community";
 
 export default function Home() {
 
@@ -16,6 +17,7 @@ export default function Home() {
       <div className="flex flex-col gap-12 pb-16 max-w-screen">
           <TopicSection topics={topics} />
           <CountryMoviesCarousel movies={MovieData} />
+          <Community />
       </div>
     </>
   );

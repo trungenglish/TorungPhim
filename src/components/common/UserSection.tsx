@@ -13,13 +13,13 @@ const UserSection = () => {
         <AvatarFallback>T</AvatarFallback>
       </Avatar>
       <div className="flex flex-col">
-        <span className="text-xs text-muted-foreground">Tài ứng dụng</span>
+        <span className="text-xs text-muted-foreground">Tải ứng dụng</span>
         <span className="text-sm font-medium text-foreground">ToPhim</span>
       </div>
       <Button 
         variant="outline" 
         size="sm" 
-        className="rounded-full p-4 bg-white text-black"
+        className="rounded-full p-4 bg-white text-black cursor-pointer"
       >
         <FontAwesomeIcon icon={faUser} className="h-4 w-4 mr-1" />
         Thành viên

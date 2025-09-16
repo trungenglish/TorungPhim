@@ -1,7 +1,7 @@
 'use client';
 
 
-const MovieCard = () => {
+const MovieCardVertical_v1 = () => {
     return (
         <div className="">
 
@@ -9,4 +9,4 @@ const MovieCard = () => {
     )
 }
 
-export default MovieCard;
+export default MovieCardVertical_v1;
