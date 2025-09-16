@@ -1,0 +1,66 @@
+name: Deploy to Production
+
+on:
+  workflow_run:
+    workflows: [ "Frontend CI" ]
+    types:
+      - completed
+
+
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://torung-phim.vercel.app
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-files-22.x
+          path: .next
+
+      - name: Deploy to Vercel (Production)
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-args: '--prod'
+
+#  deploy-production:
+#    needs: [ deploy-staging, e2e-tests ]
+#    if: github.ref == 'refs/heads/main' && success()
+#    runs-on: ubuntu-latest
+#    environment:
+#      name: production
+#      url: https://your-production-url.com
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v4
+#
+#      - name: Download build artifacts
+#        uses: actions/download-artifact@v3
+#        with:
+#          name: build-files-22.x
+#          path: .next
+#
+#      - name: Deploy to production
+#        # Replace this with the appropriate deployment action for your platform
+#        # Example for AWS S3:
+#        # uses: jakejarvis/s3-sync-action@master
+#        # with:
+#        #   args: --acl public-read --follow-symlinks --delete
+#        # env:
+#        #   AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+#        #   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#        #   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#        run: echo "Deploying to production environment"
+#        # Replace with actual deployment command
