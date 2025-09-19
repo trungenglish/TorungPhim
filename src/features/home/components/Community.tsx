@@ -7,7 +7,9 @@ import { Navigation } from "swiper/modules"
 import "swiper/css";
 import "swiper/css/navigation";
 import CommentCard from "@/components/common/CommentCard";
-
+import TheMostExciting from "./TheMostExciting";
+import TheMostFavorite from "./TheMostFavorite";
+import NewComments from "./NewComments";
 
 interface CommunityProps {
     comments: {
@@ -79,14 +81,10 @@ const Community = ({comments}: CommunityProps) => {
 
                 {/*In real time Table*/}
                 <div className="flex items-stretch justify-between">
-                   <div className="py-6 px-8">
-                        <div className="">
-
-                        </div>
-                   </div>
+                   <TheMostExciting />
+                   <TheMostFavorite />
                    <div></div>
-                   <div></div>
-                   <div></div>
+                   <NewComments />
                 </div>
             </div>
         </section>
