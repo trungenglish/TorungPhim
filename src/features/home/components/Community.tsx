@@ -26,7 +26,7 @@ const Community = ({comments}: CommunityProps) => {
             <div className="flex flex-col mb-4 border border-solid rounded-xl border-[#fff2]">
 
                 {/*Top discussion*/}
-                <div className="py-6 px-8 border-b border-solid border-[#fff2]">
+                <div className="max-[1279px]:hidden py-6 px-8 border-b border-solid border-[#fff2]">
                     <div className="inline-flex items-center gap-2 mb-5 font-medium tracking-[1.5px] text-base leading-[1.5] uppercase">
                         <FontAwesomeIcon icon={faMedal} size="sm" color="#ffd875"/>
                         <span>Top bình luận</span>
@@ -50,22 +50,22 @@ const Community = ({comments}: CommunityProps) => {
                                 nextEl: ".sw-next",
                             }}
                             breakpoints={{
-                                320: {
-                                slidesPerView: "auto",
+                                1279: {
+                                slidesPerView: 3,
                                 spaceBetween: 16,
                                 },
-                                640: {
-                                slidesPerView: "auto",
+                                1280: {
+                                slidesPerView: 4,
                                 spaceBetween: 16,
                                 },
-                                1024: {
+                                1400: {
                                 slidesPerView: 5,
                                 spaceBetween: 16,
                                 },
                                 1600: {
-                                slidesPerView: 5,
-                                spaceBetween: 16,
-                                },
+                                    slidesPerView: 6,
+                                    spaceBetween: 16,
+                                    },
                             }}
                         >
                             {comments.map(comment => (
@@ -78,8 +78,15 @@ const Community = ({comments}: CommunityProps) => {
                 </div>
 
                 {/*In real time Table*/}
-                <div className="relative">
-                   
+                <div className="flex items-stretch justify-between">
+                   <div className="py-6 px-8">
+                        <div className="">
+
+                        </div>
+                   </div>
+                   <div></div>
+                   <div></div>
+                   <div></div>
                 </div>
             </div>
         </section>
