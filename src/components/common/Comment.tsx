@@ -2,8 +2,14 @@ import { faPlay, faVenus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
+interface CommentProps {
+    userName: string;
+    avatar: string;
+    comment: string;
+    movieName: string;
+}
 
-const Comment = () => {
+const Comment = ({ userName, avatar, comment, movieName,  }: CommentProps) => {
     return (
         <Link href="/" 
         className="flex flex-col justify-center h-[68px] gap-1 pt-[0.6rem] pr-[0.8rem] pb-[0.6rem] text-[#aaa]
@@ -11,20 +17,20 @@ const Comment = () => {
         >
             {/* Avatar */}
             <div className="absolute top-4 left-[0.8rem] w-[40px] h-[40px] rounded-full shrink-0 overflow-hidden bg-black">
-                <img srcSet="https://www.rophim.me/images/avatars/pack1/02.jpg" alt="" className="absolute w-full h-full object-cover top-0 left-0 right-0 bottom-0"/>
+                <img src={avatar} alt={userName} className="absolute w-full h-full object-cover top-0 left-0 right-0 bottom-0"/>
             </div>
 
             {/* User comment */}
             <div className="flex items-center text-xs gap-2">
                 <div className="inline-flex items-center gap-2 shrink-0 ">
                     <span className="text-white">
-                        Admin
+                        {userName}
                         <FontAwesomeIcon icon={faVenus} className="ml-2" color="#ffd875"/>
                     </span>
                 </div>
 
                 <div className="grow line-clamp-1">
-                    Phim này hay quá! Cảm ơn admin đã up. Chờ tập tiếp theo nè. Mong sớm có sub Việt Nam luôn á.
+                    {comment}
                 </div>
                 
             </div>
@@ -35,7 +41,7 @@ const Comment = () => {
                     <FontAwesomeIcon icon={faPlay} />
                 </small>
                 <span className="line-clamp-1">
-                    Triều thuyết lục
+                    {movieName}
                 </span>
             </div>
         </Link>

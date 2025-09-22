@@ -47,4 +47,20 @@ export const Comments = [
         poster: "https://static.nutscdn.com/vimg/300-0/fb25f3bddb2a8d5bb00821ae4e9a684d.jpg",
         thumbnail: "https://static.nutscdn.com/vimg/300-0/8432e741aca9d795f99b47c32ac86cbf.jpg"
     },
+    { 
+        id: "7", 
+        name: "Admin", 
+        avatar: "https://www.rophim.me/images/avatars/pack6/08.jpg", 
+        comment: "Phim này hay quá! Cảm ơn admin đã up. Chờ tập tiếp theo nè. Mong sớm có sub Việt Nam luôn á.",
+        poster: "https://static.nutscdn.com/vimg/300-0/fb25f3bddb2a8d5bb00821ae4e9a684d.jpg",
+        thumbnail: "https://static.nutscdn.com/vimg/300-0/8432e741aca9d795f99b47c32ac86cbf.jpg"
+    },
+    { 
+        id: "8", 
+        name: "Admin", 
+        avatar: "https://www.rophim.me/images/avatars/pack6/08.jpg", 
+        comment: "Phim này hay quá! Cảm ơn admin đã up. Chờ tập tiếp theo nè. Mong sớm có sub Việt Nam luôn á.",
+        poster: "https://static.nutscdn.com/vimg/300-0/fb25f3bddb2a8d5bb00821ae4e9a684d.jpg",
+        thumbnail: "https://static.nutscdn.com/vimg/300-0/8432e741aca9d795f99b47c32ac86cbf.jpg"
+    },
 ]

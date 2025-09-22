@@ -6,7 +6,7 @@ import { TheMostExcitings } from "../constants/IrtTable";
 
 const TheMostFavorite = () => {
     return (
-        <div className="border-l border-solid border-[#fff1] max-[1599px]:w-[400px] shrink-0 py-6 px-8">
+        <div className="border-l border-solid border-[#fff1] w-[420px] max-[1599px]:w-[400px] shrink-0 py-6 px-8">
             
             {/* Title Section */}
             <div className="leading-normal text-[16px] mb-5 font-medium uppercase tracking-[1.5px] inline-flex items-center gap-2">
@@ -15,7 +15,7 @@ const TheMostFavorite = () => {
             </div>
 
             {/* Chart List */}
-            <ChartList movie={TheMostExcitings} />
+            <ChartList type="movie" data={TheMostExcitings} />
         </div>
     )
 }
