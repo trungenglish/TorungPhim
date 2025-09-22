@@ -1,7 +1,7 @@
 import { faBolt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import ReleaseComment from "@/components/common/ReleaseComment"
-
+import { ReleaseComments } from "../constants/IrtTable"
 
 const NewComments = () => {
     return (
@@ -13,7 +13,7 @@ const NewComments = () => {
             </div>
 
             {/* Comment List */}
-            <ReleaseComment/>
+            <ReleaseComment comments={ReleaseComments} />
 
         </div>
     )

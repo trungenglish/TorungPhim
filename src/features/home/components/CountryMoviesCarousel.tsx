@@ -24,7 +24,7 @@ interface CountryMoviesCarouselProps {
 
 const CountryMoviesCarousel = ({movies}: CountryMoviesCarouselProps) => {
     return (
-        <section className="relative z-10 px-5 overflow-hidden">
+        <section className="animate-fade-in-up relative z-10 px-5 overflow-hidden">
           <div className="bg-[linear-gradient(0deg,#282b3a00_20%,#282b3a)] rounded-xl flex flex-col justify-between items-stretch mt-0 p-8 gap-8">
             {Titles.map((title) => (
               <div key={title.id} className="flex items-center justify-between gap-4 relative">

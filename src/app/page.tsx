@@ -19,6 +19,7 @@ export default function Home() {
           <TopicSection topics={topics} />
           <CountryMoviesCarousel movies={MovieData} />
           <Community comments={Comments} />
+          
       </div>
     </>
   );

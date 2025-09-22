@@ -4,8 +4,16 @@ import "swiper/css/navigation";
 import { Autoplay } from 'swiper/modules';
 import Comment from './Comment';
 
+interface ReleaseCommentProps {
+    comments: {
+        id: string; 
+        name: string; 
+        avatar: string; 
+        comment: string; 
+        movie: string}[]
+}
 
-const ReleaseComment = () => {
+const ReleaseComment = ({comments}: ReleaseCommentProps) => {
     return (
         <div className="relative">
             <div>
@@ -17,31 +25,18 @@ const ReleaseComment = () => {
                     modules={[Autoplay]}
                     autoplay={true}
                     spaceBetween={4}
+                    loop={true}
                 >
-                    <SwiperSlide>
-                        <Comment/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Comment/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Comment/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Comment/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Comment/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Comment/>
-                    </SwiperSlide>  
-                    <SwiperSlide>
-                        <Comment/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Comment/>
-                    </SwiperSlide>
+                    {comments.map((comment) => (
+                        <SwiperSlide key={comment.id}>
+                            <Comment
+                                userName={comment.name}
+                                avatar={comment.avatar}
+                                comment={comment.comment}
+                                movieName={comment.movie}
+                            />
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
             </div>
         </div>

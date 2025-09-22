@@ -10,6 +10,7 @@ import CommentCard from "@/components/common/CommentCard";
 import TheMostExciting from "./TheMostExciting";
 import TheMostFavorite from "./TheMostFavorite";
 import NewComments from "./NewComments";
+import HotGenre from "./HotGenre";
 
 interface CommunityProps {
     comments: {
@@ -24,7 +25,7 @@ interface CommunityProps {
 
 const Community = ({comments}: CommunityProps) => {
     return (
-        <section className="relative px-5 w-full mx-0 my-auto">
+        <section className="animate-fade-in-up relative px-5 w-full mx-0 my-auto">
             <div className="flex flex-col mb-4 border border-solid rounded-xl border-[#fff2]">
 
                 {/*Top discussion*/}
@@ -51,6 +52,7 @@ const Community = ({comments}: CommunityProps) => {
                                 prevEl: ".sw-prev",
                                 nextEl: ".sw-next",
                             }}
+                            loop={true}
                             breakpoints={{
                                 1279: {
                                 slidesPerView: 3,
@@ -83,7 +85,7 @@ const Community = ({comments}: CommunityProps) => {
                 <div className="flex items-stretch justify-between">
                    <TheMostExciting />
                    <TheMostFavorite />
-                   <div></div>
+                   <HotGenre />
                    <NewComments />
                 </div>
             </div>
