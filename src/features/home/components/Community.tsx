@@ -3,7 +3,7 @@
 import { faChevronLeft, faChevronRight, faMedal } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from "swiper/modules"
+import { Navigation, Autoplay } from "swiper/modules"
 import "swiper/css";
 import "swiper/css/navigation";
 import CommentCard from "@/components/common/CommentCard";
@@ -25,7 +25,7 @@ interface CommunityProps {
 
 const Community = ({comments}: CommunityProps) => {
     return (
-        <section className="animate-fade-in-up relative px-5 w-full mx-0 my-auto">
+        <section className="animate-fade-in-up relative px-5 w-full my-0 mx-auto">
             <div className="flex flex-col mb-4 border border-solid rounded-xl border-[#fff2]">
 
                 {/*Top discussion*/}
@@ -47,12 +47,14 @@ const Community = ({comments}: CommunityProps) => {
                         </div>
 
                         <Swiper
-                            modules={[Navigation]}
+                            modules={[Navigation, Autoplay]}
                             navigation={{
                                 prevEl: ".sw-prev",
                                 nextEl: ".sw-next",
                             }}
                             loop={true}
+                            autoplay={{delay: 6000}}
+                            speed={300}
                             breakpoints={{
                                 1279: {
                                 slidesPerView: 3,
