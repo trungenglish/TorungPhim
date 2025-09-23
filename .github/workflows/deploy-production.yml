@@ -1,47 +1,48 @@
-name: Deploy to Production
+# name: Deploy to Production
 
-on:
-  workflow_run:
-    workflows: ["Frontend CI"]
-    types: [completed]
-    branches: [main]
+# on:
+#   workflow_run:
+#     workflows: ["Frontend CI"]
+#     types: [completed]
+#     branches: [main]
 
 
-jobs:
-  deploy-production:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    runs-on: ubuntu-latest
-    environment:
-      name: production
-      url: https://torung-phim.vercel.app
+# jobs:
+#   deploy-production:
+#     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: production
+#       url: https://torung-phim.vercel.app
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.x
-          cache: 'pnpm'
+#       - name: Install pnpm
+#         run: npm install -g pnpm
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 22.x
+#           cache: 'pnpm'
 
-      - name: Build Next.js project
-        run: pnpm build
+#       - name: Install dependencies
+#         run: pnpm install --frozen-lockfile
 
-      - name: Deploy to Vercel (Production)
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-args: '--prod'
+#       - name: Build Next.js project
+#         run: pnpm build
+
+#       - name: Deploy to Vercel (Production)
+#         uses: amondnet/vercel-action@v25
+#         with:
+#           vercel-token: ${{ secrets.VERCEL_TOKEN }}
+#           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+#           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+#           github-token: ${{ secrets.GITHUB_TOKEN }}
+#           vercel-args: '--prod'
 
 
 #  deploy-production:
