@@ -52,11 +52,12 @@ const CountryMoviesCarousel = ({movies}: CountryMoviesCarouselProps) => {
                 <div className="flex-1 min-w-0">
                   {/* Navigation Buttons */}
                   <div className="absolute top-[40%] -translate-y-1/2 z-20 flex justify-between w-full">
-                    <button className={`nav-prev-${title.id} left-0 w-10 h-10 bg-white hover:bg-gray-50 rounded-full shadow-lg border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 text-gray-600 hover:text-gray-800 -ml-6 cursor-pointer ${isEnd ? 'hidden' : ''}`}>
+                    <button className={`nav-prev-${title.id} left-0 w-10 h-10 bg-white hover:bg-gray-50 rounded-full shadow-lg border border-gray-200
+                      transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 text-gray-600 hover:text-gray-800 -ml-6 cursor-pointer ${isBeginning ? 'hidden' : ''}`}>
                       <FontAwesomeIcon icon={faChevronLeft} size="sm"/>
                     </button>
                     
-                    <button className={`nav-next-${title.id} right-0 w-10 h-10 bg-white hover:bg-gray-50 rounded-full shadow-lg border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 text-gray-600 hover:text-gray-800 mr-48 cursor-pointer ${isBeginning ? 'hidden' : ''}`}>
+                    <button className={`nav-next-${title.id} right-0 w-10 h-10 bg-white hover:bg-gray-50 rounded-full shadow-lg border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 text-gray-600 hover:text-gray-800 mr-48 cursor-pointer ${isEnd ? 'hidden' : ''} `}>
                       <FontAwesomeIcon icon={faChevronRight} size="sm"/>
                     </button>
                   </div>
@@ -70,6 +71,14 @@ const CountryMoviesCarousel = ({movies}: CountryMoviesCarouselProps) => {
                     navigation={{
                       prevEl: `.nav-prev-${title.id}`,
                       nextEl: `.nav-next-${title.id}`
+                    }}
+                    onSlideChange={(swiper) => {
+                      setIsBeginning(swiper.isBeginning);
+                      setIsEnd(swiper.isEnd);
+                    }}
+                    onSwiper={(swiper) => {
+                        setIsBeginning(swiper.isBeginning);
+                        setIsEnd(swiper.isEnd);
                     }}
                     breakpoints={{
                       320: {

@@ -18,7 +18,7 @@ interface Top10MovieCardProps {
 const Top10MovieCard = ({type, movie, index = 0}: Top10MovieCardProps) => {
     return (
         <div className="relative w-full flex flex-col gap-3">
-            <Link className=" relative bg-transparent w-full h-0 pb-[150%] overflow-hidden rounded-lg"
+            <Link className="relative bg-transparent w-full h-0 pb-[150%] overflow-hidden rounded-lg"
                 href="/"
             >
                 {/**

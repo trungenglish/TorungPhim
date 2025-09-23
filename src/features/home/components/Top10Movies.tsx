@@ -5,7 +5,7 @@ import { Navigation } from "swiper/modules";
 import Top10MovieCard from '@/components/common/Top10MovieCard';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
+import { useSwiperNavigation } from '@/hooks/useSwiper';
 
 
 interface Top10MoviesProps {
@@ -22,8 +22,7 @@ interface Top10MoviesProps {
 }
 
 const Top10Movies = ({type, movies}: Top10MoviesProps) => {
-    const [isBeginning, setIsBeginning] = useState(true);
-    const [isEnd, setIsEnd] = useState(false);
+    const { isBeginning, isEnd, handleSlideChange, handleSwiperInit } = useSwiperNavigation();
 
     return (
         <div className="relative max-w-[1900px] w-full px-5 my-0 mx-autooverscroll-x-contain">
@@ -39,7 +38,7 @@ const Top10Movies = ({type, movies}: Top10MoviesProps) => {
             {/* Content */}
             <div>
                 <div className="relative mb-5">
-                    <div className="">
+                    <div>
                         <button className={`nav-next-${type} absolute z-10 right-0 top-[calc(50%-27px)] transform translate-x-full -translate-y-1/2 p-1.5 
                             bg-transparent opacity-50 cursor-pointer hover:opacity-100 transition-opacity duration-300 ${isEnd ? 'hidden' : ''}`}>
                         <FontAwesomeIcon icon={faChevronRight} size="3x"/>
@@ -57,14 +56,8 @@ const Top10Movies = ({type, movies}: Top10MoviesProps) => {
                             prevEl: `.nav-prev-${type}`,
                             nextEl: `.nav-next-${type}`
                         }}
-                        onSlideChange={(swiper) => {
-                            setIsBeginning(swiper.isBeginning);
-                            setIsEnd(swiper.isEnd);
-                        }}
-                        onSwiper={(swiper) => {
-                            setIsBeginning(swiper.isBeginning);
-                            setIsEnd(swiper.isEnd);
-                        }}
+                        onSlideChange={handleSlideChange}
+                        onSwiper={handleSwiperInit}
                         spaceBetween={16}
                         breakpoints={
                             {
@@ -82,7 +75,11 @@ const Top10Movies = ({type, movies}: Top10MoviesProps) => {
                     >
                         {movies.map((movie, index) => (
                             <SwiperSlide key={movie.id}>
-                                <Top10MovieCard type={type} movie={movie} index={index} />
+                                <Top10MovieCard 
+                                    type={type} 
+                                    movie={movie} 
+                                    index={index} 
+                                />
                             </SwiperSlide>
                         ))}
                     </Swiper>
