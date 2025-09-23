@@ -17,10 +17,13 @@ interface MovieCardHorizontalV1Props {
 
 const MovieCardHorizontal_v1 = ({ movie }: MovieCardHorizontalV1Props) => {
   return (
-    <div>
+    <>
       <Link href="#" className="block relative">
         {/* Movie Badges */}
-        <MovieBadges type="SERIES" subtitleEp={movie.subtitleEp} dubbedEp={movie.dubbedEp} voicedEp={movie.voicedEp} />
+        <MovieBadges type="SERIES" 
+          subtitleEp={movie.subtitleEp} 
+          dubbedEp={movie.dubbedEp} 
+          voicedEp={movie.voicedEp} />
 
         <img
           className="rounded-xl w-full"
@@ -49,7 +52,7 @@ const MovieCardHorizontal_v1 = ({ movie }: MovieCardHorizontalV1Props) => {
           </Link>
         </h4>
       </div>
-    </div>
+    </>
   )
 }
 

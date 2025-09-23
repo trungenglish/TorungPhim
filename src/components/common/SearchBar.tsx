@@ -6,7 +6,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const SearchBar = () => {
   return (
-    <div className="hidden min-[1360px]:flex min-w-0">
+    <div className="hidden min-[1360px]:block flex-shrink">
       <div className="relative w-[clamp(160px,20vw,270px)]">
         <FontAwesomeIcon 
           icon={faSearch} 
