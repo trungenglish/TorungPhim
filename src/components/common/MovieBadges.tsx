@@ -1,17 +1,23 @@
 
 
 interface MovieBadgeProps {
-    type: string;
+    type: 'SERIES' | 'SINGLE';
     subtitleEp?: number;
     dubbedEp?: number;
     voicedEp?: number;
+    position?: 'default' | 'center';
 }
 
-const MovieBadges = ({ type, subtitleEp, dubbedEp, voicedEp }: MovieBadgeProps) => {
+const MovieBadges = ({ type, subtitleEp, dubbedEp, voicedEp, position = 'default' }: MovieBadgeProps) => {
+    
+    const positionClass = position === 'center'
+        ? 'left-1/2 -translate-x-1/2'
+        : 'left-4';
+
     return (
         <>
             { type === 'SERIES' ? (
-                <div className="absolute bottom-0 left-4 flex rounded-t-sm overflow-hidden z-10">       
+                <div className={`absolute bottom-0 ${positionClass} flex rounded-t-sm overflow-hidden z-10`}>       
                     {subtitleEp !== undefined && subtitleEp > 0 && (
                         <div className="bg-[#5e6070] px-2 py-1 text-xs font-normal text-white">
                             <span>PĐ.</span>
@@ -32,7 +38,7 @@ const MovieBadges = ({ type, subtitleEp, dubbedEp, voicedEp }: MovieBadgeProps) 
                     )}
                 </div>   
             ) : (
-                <div className="absolute bottom-0 left-4 flex rounded-t-sm overflow-hidden z-10">                
+                <div className={`absolute bottom-0 ${positionClass} flex rounded-t-sm overflow-hidden z-10`}>                
                     <div className="bg-[#5e6070] px-2 py-1 text-xs font-normal text-white">
                         <span>P.Đề</span>
                     </div>

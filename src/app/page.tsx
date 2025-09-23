@@ -8,10 +8,10 @@ import CountryMoviesCarousel from "@/features/home/components/CountryMoviesCarou
 import { MovieData } from "@/features/home/constants/CountryMoviesCarousel";
 import Community from "@/features/home/components/Community";
 import { Comments } from "@/features/home/constants/comment";
-
+import Top10Movies from "@/features/home/components/Top10Movies";
+import { Top10Movies as Top10MoviesData } from "@/features/home/constants/Top10Movies";
 export default function Home() {
 
-  
   return (
     <>
       <HeroSection movie={featuredMovie}/>
@@ -19,7 +19,7 @@ export default function Home() {
           <TopicSection topics={topics} />
           <CountryMoviesCarousel movies={MovieData} />
           <Community comments={Comments} />
-          
+          <Top10Movies type="SERIES" movies={Top10MoviesData} />
       </div>
     </>
   );
