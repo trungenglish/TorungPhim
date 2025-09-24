@@ -17,8 +17,8 @@ interface MovieCardHorizontalV1Props {
 
 const MovieCardHorizontal_v1 = ({ movie }: MovieCardHorizontalV1Props) => {
   return (
-    <>
-      <Link href="#" className="block relative">
+    <div className="relative w-full">
+      <Link href="#" className="block relative pb-[56%] w-full h-0 rounded-lg overflow-hidden">
         {/* Movie Badges */}
         <MovieBadges type="SERIES" 
           subtitleEp={movie.subtitleEp} 
@@ -26,33 +26,35 @@ const MovieCardHorizontal_v1 = ({ movie }: MovieCardHorizontalV1Props) => {
           voicedEp={movie.voicedEp} />
 
         <img
-          className="rounded-xl w-full"
+          className="absolute inset-0 w-full h-full object-cover"
           src={movie.image}
           alt={movie.name}
         />
       </Link>
 
-      <div className="px-4 py-3 flex flex-col">
-        <h4 className="font-medium">
-          <Link 
-            className="text-white hover:text-yellow-300 transition-colors duration-200" 
-            title={movie.name} 
-            href="#"
-          >
-            {movie.name}
-          </Link>
-        </h4>
-        <h4 className="text-[#aaa] text-[0.9rem]">
-          <Link 
-            className="hover:text-white transition-colors duration-200"
-            title={movie.enName} 
-            href="#"
-          >
-            {movie.enName}
-          </Link>
-        </h4>
+      <div className="relative px-4 py-3 flex flex-row justify-between gap-5 items-start">
+        <div className="grow">
+          <h4 className="font-medium mb-0 leading-normal text-[1em] text-white line-clamp-1">
+            <Link 
+              className=" hover:text-yellow-300 transition-colors duration-200" 
+              title={movie.name} 
+              href="#"
+            >
+              {movie.name}
+            </Link>
+          </h4>
+          <h4 className="text-[#aaa] text-[0.9rem] mb-0 leading-normal line-clamp-1 font-normal">
+            <Link 
+              className="hover:text-white transition-colors duration-200"
+              title={movie.enName} 
+              href="#"
+            >
+              {movie.enName}
+            </Link>
+          </h4>
+        </div>  
       </div>
-    </>
+    </div>
   )
 }
 

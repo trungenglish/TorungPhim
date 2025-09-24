@@ -11,7 +11,7 @@ import { Titles } from "../constants/CountryMoviesCarousel"
 import MovieCardHorizontalV1 from "@/components/common/MovieCardHorizontal_v1"
 import { useState } from "react"
 
-interface CountryMoviesCarouselProps {
+interface Style6_CarouselHorizontalProps {
     movies: {
         id: string;
         name: string;
@@ -23,7 +23,7 @@ interface CountryMoviesCarouselProps {
     }[];
 }
 
-const CountryMoviesCarousel = ({movies}: CountryMoviesCarouselProps) => {
+const Style6_CarouselHorizontal = ({movies}: Style6_CarouselHorizontalProps) => {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
     
@@ -110,4 +110,4 @@ const CountryMoviesCarousel = ({movies}: CountryMoviesCarouselProps) => {
     )
 }
 
-export default CountryMoviesCarousel
+export default Style6_CarouselHorizontal
