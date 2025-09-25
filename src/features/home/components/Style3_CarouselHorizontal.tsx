@@ -34,7 +34,10 @@ const Style3_CarouselHorizontal = ({type, movies, id}: Style3_CarouselHorizontal
             {/* Content */}
             <div className="relative">
                 {/* Navigation Buttons */}
-                <ButtonNav_v1 id={id} isEnd={isEnd} isBeginning={isBeginning} />
+                <ButtonNav_v1 id={id} 
+                    isEnd={isEnd} 
+                    isBeginning={isBeginning} 
+                />
 
                 {/* Carousel */}
                 <Swiper 

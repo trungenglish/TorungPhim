@@ -217,4 +217,11 @@
       );
     }
   }
+
+  @layer utilities {
+    .hide-disabled-btn .swiper-button-disabled {
+      @apply opacity-0 pointer-events-none;
+    }
+}
+
 }
