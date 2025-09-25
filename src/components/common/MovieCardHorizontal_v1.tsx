@@ -4,6 +4,7 @@ import Link from 'next/link'
 import MovieBadges from './MovieBadges'
 
 interface MovieCardHorizontalV1Props {
+  type: 'SERIES' | 'SINGLE' | 'UPCOMING';
   movie: {
     id: string
     name: string
@@ -15,12 +16,12 @@ interface MovieCardHorizontalV1Props {
   }
 }
 
-const MovieCardHorizontal_v1 = ({ movie }: MovieCardHorizontalV1Props) => {
+const MovieCardHorizontal_v1 = ({ type, movie }: MovieCardHorizontalV1Props) => {
   return (
     <div className="relative w-full">
       <Link href="#" className="block relative pb-[56%] w-full h-0 rounded-lg overflow-hidden">
         {/* Movie Badges */}
-        <MovieBadges type="SERIES" 
+        <MovieBadges type={type} 
           subtitleEp={movie.subtitleEp} 
           dubbedEp={movie.dubbedEp} 
           voicedEp={movie.voicedEp} />

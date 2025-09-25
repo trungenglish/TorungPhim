@@ -8,13 +8,14 @@ import { Navigation } from "swiper/modules"
 import "swiper/css";
 import "swiper/css/navigation";
 import { Titles } from "../constants/CountryMoviesCarousel"
-import MovieCardHorizontalV1 from "@/components/common/MovieCardHorizontal_v1"
+import MovieCardHorizontal_v1 from "@/components/common/MovieCardHorizontal_v1"
 
 import { useSwiperNavigation } from "@/hooks/useSwiper"
 import ButtonNav_v2 from "@/components/common/ButtonNav_v2"
 
 
 interface Style6_CarouselHorizontalProps {
+  type: 'SERIES' | 'SINGLE' | 'UPCOMING';
     movies: {
         id: string;
         name: string;
@@ -26,7 +27,7 @@ interface Style6_CarouselHorizontalProps {
     }[];
 }
 
-const Style6_CarouselHorizontal = ({movies}: Style6_CarouselHorizontalProps) => {
+const Style6_CarouselHorizontal = ({type, movies}: Style6_CarouselHorizontalProps) => {
   const { isBeginning, isEnd, handleSlideChange, handleSwiperInit } = useSwiperNavigation();
     
     return (
@@ -76,7 +77,7 @@ const Style6_CarouselHorizontal = ({movies}: Style6_CarouselHorizontalProps) => 
                     >
                       {movies.map((movie) => (
                         <SwiperSlide key={movie.id}>
-                          <MovieCardHorizontalV1 movie={movie}/>
+                          <MovieCardHorizontal_v1 type={type} movie={movie}/>
                         </SwiperSlide>
                       ))}
                     </Swiper>

@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 interface ButtonNav_v1Props {
     id: string;
-    isEnd: boolean;
-    isBeginning: boolean;
 }
 
 const ButtonNav_v1 = ({id}: ButtonNav_v1Props) => {

@@ -1,7 +1,7 @@
 
 
 interface MovieBadgeProps {
-    type: 'SERIES' | 'SINGLE';
+    type: 'SERIES' | 'SINGLE' | 'UPCOMING';
     subtitleEp?: number;
     dubbedEp?: number;
     voicedEp?: number;
@@ -18,8 +18,8 @@ const MovieBadges = ({ type, subtitleEp, dubbedEp, voicedEp, position = 'default
 
     return (
         <>
-            { type === 'SERIES' ? (
-                <div className={` absolute bottom-0 ${positionClass} flex rounded-t-sm overflow-hidden z-10`}>       
+            { type === 'SERIES' && (
+                <div className={`absolute bottom-0 ${positionClass} flex rounded-t-sm overflow-hidden z-10`}>       
                     {subtitleEp !== undefined && subtitleEp > 0 && (
                         <div className="bg-[#5e6070] px-2 py-1 text-xs font-normal text-white">
                             <span>PĐ.</span>
@@ -39,7 +39,9 @@ const MovieBadges = ({ type, subtitleEp, dubbedEp, voicedEp, position = 'default
                         </div>
                     )}
                 </div>   
-            ) : (
+            )}
+
+            { type === 'SINGLE' && (
                 <div className={`absolute bottom-0 ${positionClass} flex rounded-t-sm overflow-hidden z-10`}>                
                     <div className="bg-[#5e6070] px-2 py-1 text-xs font-normal text-white">
                         <span>P.Đề</span>
@@ -52,6 +54,16 @@ const MovieBadges = ({ type, subtitleEp, dubbedEp, voicedEp, position = 'default
                     </div>
                 </div>   
             )} 
+
+            { type === 'UPCOMING' && (
+                <div className="absolute left-4 right-auto bottom-0 flex justify-between items-stretch rounded-t-sm overflow-hidden z-10">
+                    <div className="bg-white text-black flex flex-1 gap-[0.2rem] justify-center px-2 py-[0.2rem] text-[11px] font-normal">
+                        <strong>
+                            Sắp chiếu
+                        </strong>
+                    </div>
+                </div>
+            )}
         </>
     )
 }
