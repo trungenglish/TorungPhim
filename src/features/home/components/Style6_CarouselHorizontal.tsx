@@ -9,8 +9,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Titles } from "../constants/CountryMoviesCarousel"
 import MovieCardHorizontal_v1 from "@/components/common/MovieCardHorizontal_v1"
-
-import { useSwiperNavigation } from "@/hooks/useSwiper"
 import ButtonNav_v2 from "@/components/common/ButtonNav_v2"
 
 
@@ -28,7 +26,7 @@ interface Style6_CarouselHorizontalProps {
 }
 
 const Style6_CarouselHorizontal = ({type, movies}: Style6_CarouselHorizontalProps) => {
-  const { isBeginning, isEnd, handleSlideChange, handleSwiperInit } = useSwiperNavigation();
+ 
     
     return (
         <section className="relative animate-fade-in-up max-w-[1900px] z-10 max-[1919px]:py-0 max-[1919px]:px-5 w-full mx-auto my-0">

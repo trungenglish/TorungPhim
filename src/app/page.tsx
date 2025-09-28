@@ -14,6 +14,7 @@ import Style4_CarouselVertical from "@/features/home/components/Style4_CarouselV
 import Style3_CarouselHorizontal from "@/features/home/components/Style3_CarouselHorizontal";
 import Style5_CarouselHorizontal from "@/features/home/components/Style5_CarouselHorizontal";
 import Style2_CarouselVertical from "@/features/home/components/Style2_CarouselVertical";
+import { AnimeData } from "@/features/home/constants/anime";
 
 export default function Home() {
 
@@ -28,7 +29,7 @@ export default function Home() {
           <Style4_CarouselVertical type="SERIES" movies={Top10MoviesData} id="2"/>
           <Style3_CarouselHorizontal type="SERIES" movies={MovieData} id="3"/>
           <Style5_CarouselHorizontal type="UPCOMING" movies={MovieData} id="4"/>
-          <Style2_CarouselVertical type="SERIES" movies={MovieData} />
+          <Style2_CarouselVertical type="SERIES" movies={AnimeData} />
       </div>
     </>
   );
