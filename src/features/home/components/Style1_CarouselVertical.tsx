@@ -22,11 +22,6 @@ interface Style1_CarouselVerticalProps {
 }
 
 const Style1_CarouselVertical = ({type, movies, id}: Style1_CarouselVerticalProps) => {
-    const { 
-        isBeginning, isEnd, 
-        handleSlideChange, 
-        handleSwiperInit 
-    } = useSwiperNavigation();
 
     return (
         <div className="relative animate-fade-in-up max-w-[1900px] max-[1919px]:px-5 max-[1919px]:py-0 w-full mx-auto my-0">
@@ -40,7 +35,7 @@ const Style1_CarouselVertical = ({type, movies, id}: Style1_CarouselVerticalProp
             {/* Content */}
             <div className="relative">
                 {/* Navigation Buttons */}
-                <ButtonNav_v1 id={id} isEnd={isEnd} isBeginning={isBeginning} />
+                <ButtonNav_v1 id={id}/>
 
                 {/* Carousel */}
                 <Swiper 
@@ -51,8 +46,6 @@ const Style1_CarouselVertical = ({type, movies, id}: Style1_CarouselVerticalProp
                         nextEl: `.nav-next-${id}`
                     }}
                     spaceBetween={16}
-                    onSlideChange={handleSlideChange}
-                    onSwiper={handleSwiperInit}
                 >
                     {movies.map((movie) => (
                         <SwiperSlide key={movie.id}>

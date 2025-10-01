@@ -3,7 +3,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import Top10MovieCard from '@/components/common/Top10MovieCard';
-import { useSwiperNavigation } from '@/hooks/useSwiper';
 import CarouselHeader from '@/components/common/CarouselHeader';
 import ButtonNav_v1 from '@/components/common/ButtonNav_v1';
 
@@ -22,7 +21,6 @@ interface Style4_CarouselVerticalProps {
 }
 
 const Style4_CarouselVertical = ({type, movies, id}: Style4_CarouselVerticalProps) => {
-    const { isBeginning, isEnd, handleSlideChange, handleSwiperInit } = useSwiperNavigation();
 
     return (
         <div className="relative animate-fade-in-up max-w-[1900px] max-[1919px]:px-5 max-[1919px]:py-0 w-full my-0 mx-auto">
@@ -35,7 +33,7 @@ const Style4_CarouselVertical = ({type, movies, id}: Style4_CarouselVerticalProp
 
             {/* Content */}
             <div className="relative mb-5">
-                <ButtonNav_v1 id={id} isEnd={isEnd} isBeginning={isBeginning} />
+                <ButtonNav_v1 id={id}/>
                     
                 <Swiper
                     slidesPerView={5}
@@ -44,8 +42,6 @@ const Style4_CarouselVertical = ({type, movies, id}: Style4_CarouselVerticalProp
                         prevEl: `.nav-prev-${id}`,
                         nextEl: `.nav-next-${id}`
                     }}
-                    onSlideChange={handleSlideChange}
-                    onSwiper={handleSwiperInit}
                     spaceBetween={16}
                     breakpoints={
                         {
