@@ -2,6 +2,8 @@ import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import AuthModal from "@/features/auth/components/AuthModal";
+import HeroSection from "@/features/home/components/HeroSection";
+import { AnimeData } from "@/features/home/constants/anime";
 
 export default function RootLayout({
   children,
@@ -13,9 +15,7 @@ export default function RootLayout({
       <body>
         <div id="app">
           <Header/>
-          <main className="pt-16 max-w-[1900px] mx-auto">
-              {children}
-          </main>
+            {children}
           <Footer/>
         </div>
         

@@ -6,7 +6,7 @@ import Top10MovieCard from '@/components/common/Top10MovieCard';
 import CarouselHeader from '@/components/common/CarouselHeader';
 import ButtonNav_v1 from '@/components/common/ButtonNav_v1';
 
-interface Style4_CarouselVerticalProps {
+type Style4_CarouselVerticalProps = {
     id: string;
     type: 'SERIES' | 'SINGLE',
     movies: {
@@ -18,7 +18,7 @@ interface Style4_CarouselVerticalProps {
         dubbedEp?: number;
         voicedEp?: number;
     }[];
-}
+};
 
 const Style4_CarouselVertical = ({type, movies, id}: Style4_CarouselVerticalProps) => {
 
@@ -61,7 +61,8 @@ const Style4_CarouselVertical = ({type, movies, id}: Style4_CarouselVerticalProp
                         <SwiperSlide key={movie.id}>
                             <Top10MovieCard 
                                 type={type} 
-                                movie={movie}                                     index={index} 
+                                movie={movie}                                     
+                                index={index} 
                             />
                         </SwiperSlide>
                     ))}

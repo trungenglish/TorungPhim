@@ -4,7 +4,7 @@ import CarouselHeader from "@/components/common/CarouselHeader";
 import ButtonNav_v1 from "@/components/common/ButtonNav_v1";
 import MovieCardHorizontal_v2 from "@/components/common/MovieCardHorizontal_v2";
 
-interface Style3_CarouselHorizontalProps {
+type Style3_CarouselHorizontalProps = {
     type: 'SERIES' | 'SINGLE';
     movies: {
         id: string;
@@ -16,7 +16,7 @@ interface Style3_CarouselHorizontalProps {
         voicedEp?: number;
     }[];
     id: string;
-}
+};
 
 const Style3_CarouselHorizontal = ({type, movies, id}: Style3_CarouselHorizontalProps) => {
 

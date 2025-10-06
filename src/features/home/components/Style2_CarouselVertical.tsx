@@ -7,11 +7,11 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/thumbs';
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faInfoCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
+import MediaBackdrop from "@/components/common/MediaBackdrop";
+import InfoChips from "@/components/common/InfoChips";
+import ActionButtons from "@/components/common/ActionButtons";
 
-interface Style2_CarouselVerticalProps {
-    type: 'SERIES' | 'SINGLE';
+type Style2_CarouselVerticalProps = {
     movies: {
         id: string;
         name: string;
@@ -26,9 +26,9 @@ interface Style2_CarouselVerticalProps {
         type: string;
         description: string;
     }[];
-}
+};
 
-const Style2_CarouselVertical = ({type, movies}: Style2_CarouselVerticalProps) => {
+const Style2_CarouselVertical = ({ movies}: Style2_CarouselVerticalProps) => {
     const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
     
     return (
@@ -39,7 +39,7 @@ const Style2_CarouselVertical = ({type, movies}: Style2_CarouselVerticalProps) =
                 type="2" 
             />
 
-            <div className="pb-8 ">
+            <div className="pb-8">
                 <Swiper
                     className="max-[1599px]:h-[460px] m-0 rounded-[1.2rem] w-full bg-[#202331]"
                     modules={[EffectFade, Thumbs]}
@@ -50,8 +50,7 @@ const Style2_CarouselVertical = ({type, movies}: Style2_CarouselVerticalProps) =
                     {movies.map((movie) => (
                         <SwiperSlide key={movie.id}>
                             <div className="absolute inset-0 w-full h-full bg-[#2f3346] ">
-                                <Link href="/" >
-                                </Link>
+                                <Link href="/" />
 
                                 {/*Image */}
                                 <div className="absolute w-[calc(100%-500px)] h-full left-auto right-0 transform-none max-w-[1990px] top-0 [mask-image:linear-gradient(90deg,transparent_0,black_30%,black)]">
@@ -72,31 +71,7 @@ const Style2_CarouselVertical = ({type, movies}: Style2_CarouselVerticalProps) =
                                             <Link href="/" className="text-yellow-300">{movie.enName}</Link>
                                         </h3>
 
-                                        <div className="flex items-center justify-start flex-wrap gap-[0.6rem] mb-3">
-                                            <div className="inline-flex items-center bg-transparent border border-solid border-yellow-300 text-white text-xs leading-6 font-medium 
-                                                px-[0.4rem] py-0 rounded-[0.33rem] shrink-0 
-                                                relative before:content-['IMDb'] before:text-[#f0d25c] before:font-medium before:pr-1 before:text-[10px] before:leading-none">
-                                                <span>{movie.imdb}</span>
-                                            </div>
-
-                                            <div className="flex items-center text-xs bg-white font-medium overflow-hidden text-black rounded-[0.33rem] leading-[26px] py-0 px-2 shrink-0">
-                                                <span>
-                                                    <strong>{movie.age}</strong>
-                                                </span>
-                                            </div>
-
-                                            <div className="inline-flex items-center border border-solid border-white bg-[#ffffff10] h-[26px] py-0 px-[0.4rem] text-white rounded-[0.33rem] text-xs">
-                                                <span>{movie.release}</span>
-                                            </div>
-
-                                            <div className="inline-flex items-center border border-solid border-white bg-[#ffffff10] h-[26px] py-0 px-[0.4rem] text-white rounded-[0.33rem] text-xs">
-                                                <span>Phần {movie.part}</span>
-                                            </div>
-
-                                            <div className="inline-flex items-center border border-solid border-white bg-[#ffffff10] h-[26px] py-0 px-[0.4rem] text-white rounded-[0.33rem] text-xs">
-                                                <span>Tập {movie.episode}</span>
-                                            </div>
-                                        </div>
+                                        <InfoChips imdb={movie.imdb} age={movie.age} release={movie.release} part={`Phần ${movie.part}`} episode={`Tập ${movie.episode}`} />
 
                                         <div className="flex items-center justify-start flex-wrap gap-[0.6rem] mb-6">
                                             <Link href="/" className="inline-flex items-center bg-[#ffffff10] h-[26px] py-0 px-[0.4rem] text-white text-xs rounded-[0.33rem]">
@@ -131,32 +106,7 @@ const Style2_CarouselVertical = ({type, movies}: Style2_CarouselVerticalProps) =
                                             của gia đình anh mười hai năm trước.
                                         </div>
                                         
-                                        <div className="flex items-center gap-8">
-
-                                            <Link href="/"
-                                                className="flex items-center justify-center w-[70px] h-[70px] rounded-full shrink-0 text-black opacity-95 
-                                                            bg-gradient-to-tr from-[#FECF59] to-[#FFF1CC] 
-                                                            [box-shadow:0_5px_10px_5px_rgba(255,218,125,0.1)]
-                                                            transition-all duration-300 
-                                                            hover:[box-shadow:0_8px_20px_8px_rgba(255,218,125,0.4)]"
-                                                >
-                                                <FontAwesomeIcon icon={faPlay} size="xl" />
-                                            </Link>
-
-                                            <div className="inline-flex items-center border-2 border-solid border-[#ffffff10] rounded-4xl overflow-hidden transition-colors duration-300 hover:border-white">
-                                                <Link href="/" className="group relative gap-[0.3rem] pl-[0.4rem] h-[50px] min-w-[68px] flex justify-center items-center flex-col py-0 px-[0.2rem]">
-                                                    <div className="w-5 h-5 shrink-0 leading-0 group-hover:text-yellow-300 transition-colors duration-300">
-                                                        <FontAwesomeIcon icon={faHeart} size="lg"/>
-                                                    </div>
-                                                </Link>
-                                                <Link href="/" className="group flex justify-center items-center flex-col py-0 px-[0.2rem] gap-[0.3rem] relative 
-                                                    border-l-2 border-solid border-[#ffffff10] pr-[0.4rem] h-[50px] min-w-[68px]">
-                                                    <div className="w-5 h-5 shrink-0 leading-0 group-hover:text-yellow-300 transition-colors duration-300">
-                                                        <FontAwesomeIcon icon={faInfoCircle} size="lg"/>
-                                                    </div>
-                                                </Link>
-                                            </div>
-                                        </div>
+                                        <ActionButtons />
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +119,6 @@ const Style2_CarouselVertical = ({type, movies}: Style2_CarouselVerticalProps) =
                     modules={[Thumbs]}
                     onSwiper={setThumbsSwiper}
                     watchSlidesProgress
-                    // freeMode={true}
                     slidesPerView={15}
                     spaceBetween={16}
                 >

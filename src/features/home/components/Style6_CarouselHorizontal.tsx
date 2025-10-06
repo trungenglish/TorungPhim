@@ -1,6 +1,6 @@
 "use client"
 
-import { faAngleRight, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons"
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -12,7 +12,7 @@ import MovieCardHorizontal_v1 from "@/components/common/MovieCardHorizontal_v1"
 import ButtonNav_v2 from "@/components/common/ButtonNav_v2"
 
 
-interface Style6_CarouselHorizontalProps {
+type Style6_CarouselHorizontalProps = {
   type: 'SERIES' | 'SINGLE' | 'UPCOMING';
     movies: {
         id: string;
@@ -23,10 +23,9 @@ interface Style6_CarouselHorizontalProps {
         dubbedEp?: number;
         voicedEp?: number;
     }[];
-}
+};
 
 const Style6_CarouselHorizontal = ({type, movies}: Style6_CarouselHorizontalProps) => {
- 
     
     return (
         <section className="relative animate-fade-in-up max-w-[1900px] z-10 max-[1919px]:py-0 max-[1919px]:px-5 w-full mx-auto my-0">

@@ -1,12 +1,12 @@
 
 
-interface MovieBadgeProps {
+type MovieBadgeProps = {
     type: 'SERIES' | 'SINGLE' | 'UPCOMING';
     subtitleEp?: number;
     dubbedEp?: number;
     voicedEp?: number;
     position?: 'default' | 'center' | '1/2-center';
-}
+};
 
 const MovieBadges = ({ type, subtitleEp, dubbedEp, voicedEp, position = 'default' }: MovieBadgeProps) => {
     

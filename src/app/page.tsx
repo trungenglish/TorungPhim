@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
 import HeroSection from "@/features/home/components/HeroSection";
-import {featuredMovie} from "@/constants/mockData";
+import { featuredMovie } from "@/constants/mockData";
 import TopicSection from "@/features/home/components/TopicSection";
 import { topics } from "@/features/home/constants/topics";
 import { MovieData } from "@/features/home/constants/CountryMoviesCarousel";
@@ -17,19 +17,32 @@ import Style2_CarouselVertical from "@/features/home/components/Style2_CarouselV
 import { AnimeData } from "@/features/home/constants/anime";
 
 export default function Home() {
-
   return (
     <>
-      <HeroSection movie={featuredMovie}/>
-      <div className="flex flex-col gap-12 pb-16 max-w-screen">
+      <HeroSection movies={AnimeData} />
+      <div className="relative z-[9] pt-0 pb-40 min-h-[calc(100vh-400px)]">
+        <div className="flex flex-col gap-[50px]">
           <TopicSection topics={topics} />
           <Style6_CarouselHorizontal type="SERIES" movies={MovieData} />
           <Community comments={Comments} />
-          <Style1_CarouselVertical type="SINGLE" movies={Top10MoviesData} id="1"/>
-          <Style4_CarouselVertical type="SERIES" movies={Top10MoviesData} id="2"/>
-          <Style3_CarouselHorizontal type="SERIES" movies={MovieData} id="3"/>
-          <Style5_CarouselHorizontal type="UPCOMING" movies={MovieData} id="4"/>
-          <Style2_CarouselVertical type="SERIES" movies={AnimeData} />
+          <Style1_CarouselVertical
+            type="SINGLE"
+            movies={Top10MoviesData}
+            id="1"
+          />
+          <Style4_CarouselVertical
+            type="SERIES"
+            movies={Top10MoviesData}
+            id="2"
+          />
+          <Style3_CarouselHorizontal type="SERIES" movies={MovieData} id="3" />
+          <Style5_CarouselHorizontal
+            type="UPCOMING"
+            movies={MovieData}
+            id="4"
+          />
+          <Style2_CarouselVertical movies={AnimeData} />
+        </div>
       </div>
     </>
   );

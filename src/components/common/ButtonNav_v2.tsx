@@ -1,9 +1,9 @@
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-interface ButtonNav_v2Props {
+type ButtonNav_v2Props = {
     id: string;
-}
+};
 
 const ButtonNav_v2 = ({id}: ButtonNav_v2Props) => {
     return (

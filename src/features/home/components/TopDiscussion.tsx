@@ -8,7 +8,7 @@ import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import CommentCard from "@/components/common/CommentCard";
 
-interface TopDiscussionProps {
+type TopDiscussionProps = {
     comments: {
         id: string;
         name: string;
@@ -17,7 +17,7 @@ interface TopDiscussionProps {
         poster: string;
         thumbnail: string;
     }[];
-}
+};
 
 const TopDiscussion = ({comments}: TopDiscussionProps) => {
     return (

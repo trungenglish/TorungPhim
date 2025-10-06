@@ -1,7 +1,7 @@
 import Link from "next/link";
 import MovieBadges from "./MovieBadges";
 
-interface MovieCardHorizontal_v2Props {
+type MovieCardHorizontal_v2Props = {
     type: 'SERIES' | 'SINGLE';
     movie: {
       id: string
@@ -13,7 +13,7 @@ interface MovieCardHorizontal_v2Props {
       voicedEp?: number
     }
     index?: number
-}
+};
 
 const MovieCardHorizontal_v2 = ({type, movie, index = 0}: MovieCardHorizontal_v2Props) => {
     return (

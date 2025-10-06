@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import MovieBadges from './MovieBadges'
 
-interface MovieCardHorizontalV1Props {
+type MovieCardHorizontalV1Props = {
   type: 'SERIES' | 'SINGLE' | 'UPCOMING';
   movie: {
     id: string
@@ -14,7 +14,7 @@ interface MovieCardHorizontalV1Props {
     dubbedEp?: number
     voicedEp?: number
   }
-}
+};
 
 const MovieCardHorizontal_v1 = ({ type, movie }: MovieCardHorizontalV1Props) => {
   return (

@@ -5,7 +5,7 @@ import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 
-interface Style5_CarouselHorizontalProps {
+type Style5_CarouselHorizontalProps = {
     type: 'SERIES' | 'SINGLE' | 'UPCOMING';
     id: string;
     movies: {
@@ -14,7 +14,7 @@ interface Style5_CarouselHorizontalProps {
         enName: string;
         image: string;
     }[];
-}
+};
 
 const Style5_CarouselHorizontal = ({type, movies, id}: Style5_CarouselHorizontalProps) => {
     return (

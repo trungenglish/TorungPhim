@@ -2,12 +2,11 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { useSwiperNavigation } from "@/hooks/useSwiper";
 import MovieCardVertical_v1 from "@/components/common/MovieCardVertical_v1";
 import CarouselHeader from "@/components/common/CarouselHeader";
 import ButtonNav_v1 from "@/components/common/ButtonNav_v1";
 
-interface Style1_CarouselVerticalProps {
+type Style1_CarouselVerticalProps = {
     type: 'SERIES' | 'SINGLE',
     id: string;
     movies: {
@@ -19,7 +18,7 @@ interface Style1_CarouselVerticalProps {
         dubbedEp?: number;
         voicedEp?: number;
     }[];
-}
+};
 
 const Style1_CarouselVertical = ({type, movies, id}: Style1_CarouselVerticalProps) => {
 

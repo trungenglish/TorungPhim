@@ -7,12 +7,15 @@ import {
   } from "@/components/ui/form";
   import { Input } from "@/components/ui/input";
   import { Button } from "@/components/ui/button";
-  import Link from "next/link";
   import { useForm } from "react-hook-form";
   import { registerSchema, RegisterValues } from "@/lib/validations/auth";
   import { zodResolver } from "@hookform/resolvers/zod";
   
-  const RegisterForm = () => {
+  type RegisterFormProps = {
+    onSwitchToLogin?: () => void;
+  };
+
+  const RegisterForm = ({ onSwitchToLogin }: RegisterFormProps) => {
     const form = useForm<RegisterValues>({
       resolver: zodResolver(registerSchema),
       defaultValues: {
@@ -33,11 +36,10 @@ import {
         </div>
         <div className="mb-6 mt-0">
           <p className="text-sm mb-6">
-            Nếu bạn đã có tài khoản
-            <Link href="/" className="text-[#ffd875]">
-              {" "}
+            Nếu bạn đã có tài khoản{" "}
+            <button type="button" onClick={onSwitchToLogin} className="text-[#ffd875] underline-offset-4 hover:underline cursor-pointer">
               đăng nhập
-            </Link>
+            </button>
           </p>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>

@@ -1,75 +1,79 @@
-"use client"
+"use client";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faHeart, faPlay, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHeart,
+  faPlay,
+  faInfoCircle,
+} from "@fortawesome/free-solid-svg-icons";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade, Thumbs } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import Link from "next/link";
+import { useState } from "react";
+import type { Swiper as SwiperClass } from "swiper";
+import HeroSlideContent from "./HeroSlideContent";
 
-interface HeroSectionProps {
-    movie: {
-        title: string;
-        description: string;
+type HeroSectionProps = {
+    movies: {
+        id: string;
+        name: string;
+        enName: string;
+        bgImage: string;
         image: string;
-        year: string;
-        genre: string[];
-    }
+        imdb: string;
+        age: string;
+        release: string;
+        part: string;
+        episode: number;
+        type: string;
+        description: string;
+    }[];
 }
 
-const HeroSection = ({movie}:  HeroSectionProps ) => {
+const HeroSection = ({ movies }: HeroSectionProps) => {
+    const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
+
     return (
-        <section className="relative h-[70vh] min-h-[500px] overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0">
-                <img
-                    src={movie.image}
-                    alt={movie.title}
-                    className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-            </div>
+        <section className="relative">
+            <Swiper
+                effect="fade"
+                className="max-[1919px]:h-[760px] p-0 w-full -mb-[120px] bg-[#202331] before:content-[''] before:z-[3]
+                    before:absolute before:bottom-0 before:left-0 before:right-0 before:h-[100px] before:bg-gradient-to-t before:from-[#191b24] before:to-[#191b2400]"
+                slidesPerView={1}
+                modules={[EffectFade, Thumbs]}
+                watchSlidesProgress
+                thumbs={{ swiper: thumbsSwiper }}
+            >
+                {movies.map((movie) => (
+                    <SwiperSlide key={movie.id}>
+                        <HeroSlideContent movie={movie} />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
 
-            {/* Content */}
-            <div className="relative container h-full flex items-center px-4 md:px-8">
-                <div className="max-w-2xl">
-                    <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
-                        {movie.title}
-                    </h1>
+            <Swiper
+                className="!absolute max-[1599px]:right-[30px] max-[1599px]:bottom-[172px] w-[450px]"
+                modules={[Thumbs]}
+                onSwiper={setThumbsSwiper}
+                watchSlidesProgress
+                slidesPerView={6}
+                spaceBetween={5}
+            >
+                
+                {movies.map((movie) => (
+                    <SwiperSlide key={movie.id}
+                    className="relative !h-[45px] cursor-pointer border-2 border-solid border-white rounded-lg overflow-hidden transform scale-100"
+                    >
+                        <img src={movie.image} 
+                            className="inset-0 w-full h-full object-cover bg-black"/>
+                    </SwiperSlide>
+                ))}
 
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                        <span>{movie.year}</span>
-                        <span>•</span>
-                        <span>{movie.genre.join(', ')}</span>
-                    </div>
-
-                    <p className="text-lg text-muted-foreground mb-8 line-clamp-3">
-                        {movie.description}
-                    </p>
-
-                    <div className="flex gap-6 items-center">
-                        <button
-                            className="w-20 h-20 rounded-full bg-red-500 hover:bg-red-600 transition-all duration-300 flex items-center justify-center shadow-lg hover:scale-110"
-                            aria-label="Play"
-                        >
-                            <FontAwesomeIcon icon={faPlay} className="text-white text-3xl ml-1" />
-                        </button>
-                        <button
-                            className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 flex items-center justify-center"
-                            aria-label="Add to favorites"
-                        >
-                            <FontAwesomeIcon icon={faHeart} className="text-white text-xl" />
-                        </button>
-
-                        {/* Info icon */}
-                        <button
-                            className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 flex items-center justify-center"
-                            aria-label="More info"
-                        >
-                            <FontAwesomeIcon icon={faInfoCircle} className="text-white text-xl" />
-                        </button>
-                    </div>
-                </div>
-            </div>
+            </Swiper>
         </section>
-    )
-}
-
-export default HeroSection
+  );
+};
+                
+export default HeroSection;

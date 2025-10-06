@@ -2,11 +2,11 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-interface CarouselHeaderProps {
+type CarouselHeaderProps = {
     title: string;
     href: string;
     type: '1' | '2' 
-}
+};
 
 const CarouselHeader = ({title, href, type}: CarouselHeaderProps) => {
     return (

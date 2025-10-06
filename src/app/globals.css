@@ -56,7 +56,7 @@
   --breakpoint-xs: 480px;
 
   --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
-
+  --animate-slide-content: slide-content 0.5s forwards;
 }
 
 @layer base {
@@ -222,6 +222,18 @@
     .hide-disabled-btn .swiper-button-disabled {
       @apply opacity-0 pointer-events-none;
     }
-}
+  }
+
+  @keyframes slide-content {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
 
 }

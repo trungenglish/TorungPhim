@@ -1,19 +1,14 @@
 'use client'
 
-import { faChevronLeft, faChevronRight, faMedal } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Autoplay } from "swiper/modules"
 import "swiper/css";
 import "swiper/css/navigation";
-import CommentCard from "@/components/common/CommentCard";
 import TheMostExciting from "./TheMostExciting";
 import TheMostFavorite from "./TheMostFavorite";
 import NewComments from "./NewComments";
 import HotGenre from "./HotGenre";
 import TopDiscussion from "./TopDiscussion";
 
-interface CommunityProps {
+type CommunityProps = {
     comments: {
         id: string;
         name: string;
@@ -22,11 +17,11 @@ interface CommunityProps {
         poster: string;
         thumbnail: string;
     }[];
-}
+};
 
 const Community = ({comments}: CommunityProps) => {
     return (
-        <section className="animate-fade-in-up relative px-5 w-full my-0 mx-auto">
+        <section className="animate-fade-in-up relative max-[1919px]:px-5 w-full mx-auto my-0 ">
             <div className="flex flex-col mb-4 border border-solid rounded-xl border-[#fff2]">
 
                 {/*Top discussion*/}
