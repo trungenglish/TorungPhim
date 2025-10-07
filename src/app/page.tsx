@@ -1,7 +1,6 @@
 "use client";
 
 import HeroSection from "@/features/home/components/HeroSection";
-import { featuredMovie } from "@/constants/mockData";
 import TopicSection from "@/features/home/components/TopicSection";
 import { topics } from "@/features/home/constants/topics";
 import { MovieData } from "@/features/home/constants/CountryMoviesCarousel";

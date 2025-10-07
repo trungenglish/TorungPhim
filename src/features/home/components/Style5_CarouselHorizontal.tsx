@@ -1,6 +1,6 @@
-import ButtonNav_v1 from "@/components/common/ButtonNav_v1";
+import ButtonNav_v1 from "@/components/common/v1/ButtonNav_v1";
 import CarouselHeader from "@/components/common/CarouselHeader";
-import MovieCardHorizontal_v1 from "@/components/common/MovieCardHorizontal_v1";
+import MovieCardHorizontal_v1 from "@/components/common/v1/MovieCardHorizontal_v1";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 

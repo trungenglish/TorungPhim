@@ -2,9 +2,9 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import MovieCardVertical_v1 from "@/components/common/MovieCardVertical_v1";
+import MovieCardVertical_v1 from "@/components/common/v1/MovieCardVertical_v1";
 import CarouselHeader from "@/components/common/CarouselHeader";
-import ButtonNav_v1 from "@/components/common/ButtonNav_v1";
+import ButtonNav_v1 from "@/components/common/v1/ButtonNav_v1";
 
 type Style1_CarouselVerticalProps = {
     type: 'SERIES' | 'SINGLE',

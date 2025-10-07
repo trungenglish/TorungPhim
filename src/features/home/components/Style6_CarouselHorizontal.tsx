@@ -8,8 +8,8 @@ import { Navigation } from "swiper/modules"
 import "swiper/css";
 import "swiper/css/navigation";
 import { Titles } from "../constants/CountryMoviesCarousel"
-import MovieCardHorizontal_v1 from "@/components/common/MovieCardHorizontal_v1"
-import ButtonNav_v2 from "@/components/common/ButtonNav_v2"
+import MovieCardHorizontal_v1 from "@/components/common/v1/MovieCardHorizontal_v1"
+import ButtonNav_v2 from "@/components/common/v2/ButtonNav_v2"
 
 
 type Style6_CarouselHorizontalProps = {

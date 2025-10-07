@@ -10,15 +10,21 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+         {id: "1", name:"Bí ẩn"}, 
+         {id: "2", name:"Hài hước"}, 
+         {id: "3", name:"Lãng mạn"}, 
+         {id: "4", name:"Hài hước"}, 
+         {id: "5", name:"Lãng mạn"}
+       ],
        description: `Năm 198 của Kỷ nguyên Mặt trời ở Tokyo, các đội cứu hỏa đặc biệt đang chiến đấu chống lại một hiện tượng gọi là sự đốt cháy tự phát của con người, 
-                                            nơi con người bị biến thành địa ngục sống gọi là "Địa ngục". Trong khi các Địa ngục là trường hợp đốt 
-                                            cháy tự phát của con người thế hệ đầu tiên, các thế hệ sau có khả năng điều khiển ngọn lửa trong khi 
-                                            vẫn giữ được hình dạng con người. Shinra Kusakabe, một thanh niên có biệt danh Dấu chân ác quỷ vì 
-                                            khả năng đốt cháy đôi chân của anh ta theo ý muốn, gia nhập Công ty hỏa lực đặc biệt 8, bao gồm những 
-                                            người dùng ngọn lửa khác khi họ làm việc để dập tắt mọi địa ngục mà họ gặp phải. Khi một phe đang tạo 
-                                            ra Infeals xuất hiện, Shira bắt đầu phát hiện ra sự thật đằng sau một đám cháy bí ẩn gây ra cái chết 
-                                            của gia đình anh mười hai năm trước.`,
+                    nơi con người bị biến thành địa ngục sống gọi là "Địa ngục". Trong khi các Địa ngục là trường hợp đốt 
+                    cháy tự phát của con người thế hệ đầu tiên, các thế hệ sau có khả năng điều khiển ngọn lửa trong khi 
+                    vẫn giữ được hình dạng con người. Shinra Kusakabe, một thanh niên có biệt danh Dấu chân ác quỷ vì 
+                    khả năng đốt cháy đôi chân của anh ta theo ý muốn, gia nhập Công ty hỏa lực đặc biệt 8, bao gồm những 
+                    người dùng ngọn lửa khác khi họ làm việc để dập tắt mọi địa ngục mà họ gặp phải. Khi một phe đang tạo 
+                    ra Infeals xuất hiện, Shira bắt đầu phát hiện ra sự thật đằng sau một đám cháy bí ẩn gây ra cái chết 
+                    của gia đình anh mười hai năm trước.`,
     },
     {
         id: "2",
@@ -31,7 +37,13 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+         {id: "1", name:"Bí ẩn"}, 
+         {id: "2", name:"Hài hước"}, 
+         {id: "3", name:"Lãng mạn"}, 
+         {id: "4", name:"Hài hước"}, 
+         {id: "5", name:"Lãng mạn"}
+       ],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -45,7 +57,17 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+        {id: "1", 
+            name:"Bí ẩn"}, 
+        {id: "2", 
+            name:"Hài hước"}, 
+        {id: "3", 
+            name:"Lãng mạn"}, 
+        {id: "4", 
+            name:"Hài hước"}, 
+        {id: "5", 
+            name:"Lãng mạn"}],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -59,7 +81,27 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [{
+            id: "1", 
+            name:"Bí ẩn"
+        }, 
+        {
+            id: "2", 
+            name:"Hài hước"
+        }, 
+        {
+            id: "3", 
+            name:"Lãng mạn"
+        }, 
+        {
+            id: "4", 
+            name:"Hài hước"
+        }, 
+        {
+            id: "5", 
+            name:"Lãng mạn"
+        }
+    ],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -73,7 +115,18 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+        {id: "1", 
+            name:"Bí ẩn"}, 
+        {id: "2", 
+            name:"Hài hước"}, 
+        {id: "3", 
+            name:"Lãng mạn"}, 
+        {id: "4", 
+            name:"Hài hước"}, 
+        {id: "5", 
+            name:"Lãng mạn"}
+    ],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -87,7 +140,18 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+        {id: "1", 
+            name:"Bí ẩn"}, 
+        {id: "2", 
+            name:"Hài hước"}, 
+        {id: "3", 
+            name:"Lãng mạn"}, 
+        {id: "4", 
+            name:"Hài hước"}, 
+        {id: "5", 
+            name:"Lãng mạn"}
+    ],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -101,7 +165,18 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+        {id: "1", 
+            name:"Bí ẩn"}, 
+        {id: "2", 
+            name:"Hài hước"}, 
+        {id: "3", 
+            name:"Lãng mạn"}, 
+        {id: "4", 
+            name:"Hài hước"}, 
+        {id: "5", 
+            name:"Lãng mạn"}
+    ],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -115,7 +190,18 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+        genres: [
+        {id: "1", 
+            name:"Bí ẩn"}, 
+        {id: "2", 
+            name:"Hài hước"}, 
+        {id: "3", 
+            name:"Lãng mạn"}, 
+        {id: "4", 
+            name:"Hài hước"}, 
+        {id: "5", 
+            name:"Lãng mạn"}
+    ],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -129,7 +215,18 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+        {id: "1", 
+            name:"Bí ẩn"}, 
+        {id: "2", 
+            name:"Hài hước"}, 
+        {id: "3", 
+            name:"Lãng mạn"}, 
+        {id: "4", 
+            name:"Hài hước"}, 
+        {id: "5", 
+            name:"Lãng mạn"}
+    ],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -143,7 +240,18 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+        {id: "1", 
+            name:"Bí ẩn"}, 
+        {id: "2", 
+            name:"Hài hước"}, 
+        {id: "3", 
+            name:"Lãng mạn"}, 
+        {id: "4", 
+            name:"Hài hước"}, 
+        {id: "5", 
+            name:"Lãng mạn"}
+    ],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -157,7 +265,18 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+        {id: "1", 
+            name:"Bí ẩn"}, 
+        {id: "2", 
+            name:"Hài hước"}, 
+        {id: "3", 
+            name:"Lãng mạn"}, 
+        {id: "4", 
+            name:"Hài hước"}, 
+        {id: "5", 
+            name:"Lãng mạn"}
+    ],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -171,7 +290,13 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+         {id: "1", name:"Bí ẩn"}, 
+         {id: "2", name:"Hài hước"}, 
+         {id: "3", name:"Lãng mạn"}, 
+         {id: "4", name:"Hài hước"}, 
+         {id: "5", name:"Lãng mạn"}
+       ],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -185,7 +310,17 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+        {id: "1", 
+            name:"Bí ẩn"}, 
+        {id: "2", 
+            name:"Hài hước"}, 
+        {id: "3", 
+            name:"Lãng mạn"}, 
+        {id: "4", 
+            name:"Hài hước"}, 
+        {id: "5", 
+            name:"Lãng mạn"}],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -199,7 +334,17 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+        {id: "1", 
+            name:"Bí ẩn"}, 
+        {id: "2", 
+            name:"Hài hước"}, 
+        {id: "3", 
+            name:"Lãng mạn"}, 
+        {id: "4", 
+            name:"Hài hước"}, 
+        {id: "5", 
+            name:"Lãng mạn"}],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
     {
@@ -213,7 +358,17 @@ export const AnimeData = [
        release: "2025",
        part: "1",
        episode: 12,
-       type: "Bí ẩn",
+       genres: [
+        {id: "1", 
+            name:"Bí ẩn"}, 
+        {id: "2", 
+            name:"Hài hước"}, 
+        {id: "3", 
+            name:"Lãng mạn"}, 
+        {id: "4", 
+            name:"Hài hước"}, 
+        {id: "5", 
+            name:"Lãng mạn"}],
        description: "Bí ẩn àdsfdsafdsfsdf",
     },
 ]

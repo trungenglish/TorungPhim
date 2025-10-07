@@ -26,11 +26,11 @@ const InfoChips = ({ imdb, age, release, part, episode }: InfoChipsProps) => {
       </div>
 
       <div className="inline-flex items-center border border-solid border-white bg-[#ffffff10] h-[26px] py-0 px-[0.4rem] text-white rounded-[0.33rem] text-xs">
-        <span>{part}</span>
+        <span>Phần {part}</span>
       </div>
 
       <div className="inline-flex items-center border border-solid border-white bg-[#ffffff10] h-[26px] py-0 px-[0.4rem] text-white rounded-[0.33rem] text-xs">
-        <span>{episode}</span>
+        <span>Tập {episode}</span>
       </div>
     </div>
   );

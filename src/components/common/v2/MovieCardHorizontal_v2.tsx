@@ -1,5 +1,5 @@
 import Link from "next/link";
-import MovieBadges from "./MovieBadges";
+import MovieBadges from "../MovieBadges";
 
 type MovieCardHorizontal_v2Props = {
     type: 'SERIES' | 'SINGLE';
@@ -15,7 +15,7 @@ type MovieCardHorizontal_v2Props = {
     index?: number
 };
 
-const MovieCardHorizontal_v2 = ({type, movie, index = 0}: MovieCardHorizontal_v2Props) => {
+const MovieCardHorizontal_v2 = ({type, movie}: MovieCardHorizontal_v2Props) => {
     return (
         <div className="relative w-full">
             <Link href="/"

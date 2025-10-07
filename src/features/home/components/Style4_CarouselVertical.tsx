@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import Top10MovieCard from '@/components/common/Top10MovieCard';
 import CarouselHeader from '@/components/common/CarouselHeader';
-import ButtonNav_v1 from '@/components/common/ButtonNav_v1';
+import ButtonNav_v1 from '@/components/common/v1/ButtonNav_v1';
 
 type Style4_CarouselVerticalProps = {
     id: string;

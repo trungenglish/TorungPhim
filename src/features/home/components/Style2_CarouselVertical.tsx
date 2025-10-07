@@ -7,9 +7,10 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/thumbs';
 import Link from "next/link";
-import MediaBackdrop from "@/components/common/MediaBackdrop";
 import InfoChips from "@/components/common/InfoChips";
 import ActionButtons from "@/components/common/ActionButtons";
+import GenreTags from "@/components/common/GenreTags";
+import DescribeMovie from "@/components/common/DescribeMovie";
 
 type Style2_CarouselVerticalProps = {
     movies: {
@@ -23,7 +24,10 @@ type Style2_CarouselVerticalProps = {
         release: string;
         part: string;
         episode: number;
-        type: string;
+        genres: {
+            id: string;
+            name: string;
+        }[];
         description: string;
     }[];
 };
@@ -71,40 +75,14 @@ const Style2_CarouselVertical = ({ movies}: Style2_CarouselVerticalProps) => {
                                             <Link href="/" className="text-yellow-300">{movie.enName}</Link>
                                         </h3>
 
-                                        <InfoChips imdb={movie.imdb} age={movie.age} release={movie.release} part={`Phần ${movie.part}`} episode={`Tập ${movie.episode}`} />
+                                        <InfoChips imdb={movie.imdb} 
+                                            age={movie.age} release={movie.release} 
+                                            part={movie.part}
+                                            episode={movie.episode} />
 
-                                        <div className="flex items-center justify-start flex-wrap gap-[0.6rem] mb-6">
-                                            <Link href="/" className="inline-flex items-center bg-[#ffffff10] h-[26px] py-0 px-[0.4rem] text-white text-xs rounded-[0.33rem]">
-                                                {movie.type}
-                                            </Link>
+                                        <GenreTags genres={movie.genres} />
 
-                                            <Link href="/" className="inline-flex items-center bg-[#ffffff10] h-[26px] py-0 px-[0.4rem] text-white text-xs rounded-[0.33rem]">
-                                                {movie.type}
-                                            </Link>
-
-                                            <Link href="/" className="inline-flex items-center bg-[#ffffff10] h-[26px] py-0 px-[0.4rem] text-white text-xs rounded-[0.33rem]">
-                                                {movie.type}
-                                            </Link>
-
-                                            <Link href="/" className="inline-flex items-center bg-[#ffffff10] h-[26px] py-0 px-[0.4rem] text-white text-xs rounded-[0.33rem]">
-                                                {movie.type}
-                                            </Link>
-
-                                            <Link href="/" className="inline-flex items-center bg-[#ffffff10] h-[26px] py-0 px-[0.4rem] text-white text-xs rounded-[0.33rem]">
-                                                {movie.type}
-                                            </Link>
-                                        </div>
-
-                                        <div className="text-[1em] leading-[1.6] text-white font-normal mb-8 line-clamp-3">
-                                            Năm 198 của Kỷ nguyên Mặt trời ở Tokyo, các đội cứu hỏa đặc biệt đang chiến đấu chống lại một hiện tượng gọi là sự đốt cháy tự phát của con người, 
-                                            nơi con người bị biến thành địa ngục sống gọi là "Địa ngục". Trong khi các Địa ngục là trường hợp đốt 
-                                            cháy tự phát của con người thế hệ đầu tiên, các thế hệ sau có khả năng điều khiển ngọn lửa trong khi 
-                                            vẫn giữ được hình dạng con người. Shinra Kusakabe, một thanh niên có biệt danh Dấu chân ác quỷ vì 
-                                            khả năng đốt cháy đôi chân của anh ta theo ý muốn, gia nhập Công ty hỏa lực đặc biệt 8, bao gồm những 
-                                            người dùng ngọn lửa khác khi họ làm việc để dập tắt mọi địa ngục mà họ gặp phải. Khi một phe đang tạo 
-                                            ra Infeals xuất hiện, Shira bắt đầu phát hiện ra sự thật đằng sau một đám cháy bí ẩn gây ra cái chết 
-                                            của gia đình anh mười hai năm trước.
-                                        </div>
+                                        <DescribeMovie description={movie.description} />
                                         
                                         <ActionButtons />
                                     </div>

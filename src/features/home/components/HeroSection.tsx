@@ -1,16 +1,9 @@
 "use client";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHeart,
-  faPlay,
-  faInfoCircle,
-} from "@fortawesome/free-solid-svg-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import Link from "next/link";
 import { useState } from "react";
 import type { Swiper as SwiperClass } from "swiper";
 import HeroSlideContent from "./HeroSlideContent";
@@ -27,7 +20,10 @@ type HeroSectionProps = {
         release: string;
         part: string;
         episode: number;
-        type: string;
+        genres: {
+            id: string;
+            name: string;
+        }[];
         description: string;
     }[];
 }

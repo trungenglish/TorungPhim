@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import MovieBadges from './MovieBadges'
+import MovieBadges from '../MovieBadges';
 
 type MovieCardHorizontalV1Props = {
   type: 'SERIES' | 'SINGLE' | 'UPCOMING';

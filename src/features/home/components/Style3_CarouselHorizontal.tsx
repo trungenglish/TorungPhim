@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import CarouselHeader from "@/components/common/CarouselHeader";
-import ButtonNav_v1 from "@/components/common/ButtonNav_v1";
-import MovieCardHorizontal_v2 from "@/components/common/MovieCardHorizontal_v2";
+import ButtonNav_v1 from "@/components/common/v1/ButtonNav_v1";
+import MovieCardHorizontal_v2 from "@/components/common/v2/MovieCardHorizontal_v2";
 
 type Style3_CarouselHorizontalProps = {
     type: 'SERIES' | 'SINGLE';
