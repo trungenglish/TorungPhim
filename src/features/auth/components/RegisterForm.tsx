@@ -10,17 +10,22 @@ import {
   import { useForm } from "react-hook-form";
   import { registerSchema, RegisterValues } from "@/lib/validations/auth";
   import { zodResolver } from "@hookform/resolvers/zod";
+import { openModal } from "@/store/slices/authModalSlice";
+import { useAppDispatch } from "@/store/hook";
   
   type RegisterFormProps = {
     onSwitchToLogin?: () => void;
   };
 
-  const RegisterForm = ({ onSwitchToLogin }: RegisterFormProps) => {
+  const RegisterForm = () => {
+    const dispatch = useAppDispatch()
+
     const form = useForm<RegisterValues>({
       resolver: zodResolver(registerSchema),
       defaultValues: {
         email: "",
         password: "",
+        confirmPassword: "",
       },
     });
   
@@ -37,7 +42,7 @@ import {
         <div className="mb-6 mt-0">
           <p className="text-sm mb-6">
             Nếu bạn đã có tài khoản{" "}
-            <button type="button" onClick={onSwitchToLogin} className="text-[#ffd875] underline-offset-4 hover:underline cursor-pointer">
+            <button type="button" onClick={() => dispatch(openModal('login'))} className="text-[#ffd875] underline-offset-4 hover:underline cursor-pointer">
               đăng nhập
             </button>
           </p>

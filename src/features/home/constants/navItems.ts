@@ -6,14 +6,14 @@ export type NavItem = {
 };
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Chủ đề", href: "/" },
-  { label: "Thể loại", href: "/", hasDropdown: true },
+  // { label: "Chủ đề", href: "/" },
+  // { label: "Diễn viên", href: "/" },
   { label: "Phim lẻ", href: "/" },
   { label: "Phim bộ", href: "/" },
-  { label: "Xem chung", href: "/" },
+  { label: "Thể loại", href: "/", hasDropdown: true },
   { label: "Quốc gia", href: "/", hasDropdown: true },
-  { label: "Diễn viên", href: "/" },
-  { label: "Lịch chiếu", href: "/" },
+  { label: "Xem chung", href: "/" },
+  { label: "Thêm", href: "/", hasDropdown: true},
   { label: "Rổ bóng", href: "/", badgeText: "NEW" },
 ];
 

@@ -11,7 +11,6 @@ import { Titles } from "../constants/CountryMoviesCarousel"
 import MovieCardHorizontal_v1 from "@/components/common/v1/MovieCardHorizontal_v1"
 import ButtonNav_v2 from "@/components/common/v2/ButtonNav_v2"
 
-
 type Style6_CarouselHorizontalProps = {
   type: 'SERIES' | 'SINGLE' | 'UPCOMING';
     movies: {
@@ -29,7 +28,6 @@ const Style6_CarouselHorizontal = ({type, movies}: Style6_CarouselHorizontalProp
     
     return (
         <section className="relative animate-fade-in-up max-w-[1900px] z-10 max-[1919px]:py-0 max-[1919px]:px-5 w-full mx-auto my-0">
-          
           <div className="rounded-2xl p-8 gap-8 bg-[linear-gradient(0deg,#282b3a00_20%,#282b3a)] flex justify-between flex-col items-stretch mt-0">
             
             {Titles.map((title) => (
@@ -81,7 +79,6 @@ const Style6_CarouselHorizontal = ({type, movies}: Style6_CarouselHorizontalProp
 
                   </div>
                 </div>
-              
               </div>
             ))}
           </div>

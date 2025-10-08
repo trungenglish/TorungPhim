@@ -5,7 +5,7 @@ import MobileButtons from "./MobileButtons";
 import MobileSearch from "./MobileSearch";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
-import NavPrimary from "./NavPrimary";
+import NavBar from "./NavBar";
 import AppDownloadCTA from "./AppDownloadCTA";
 import MemberButton from "./MemberButton";
 
@@ -53,7 +53,7 @@ const Header = () => {
         <SearchBar />
 
         <nav className="gap-[0.6rem] relative z-[3] flex grow items-center justify-between ">
-          <NavPrimary />
+          <NavBar />
           <div className="grow"></div>
           <AppDownloadCTA />
           <MemberButton />

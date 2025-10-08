@@ -50,9 +50,9 @@ const TopicSection = ({topics}: TopicSectionProps) => {
             </h3>
         </div>
         <div className="grid max-[1599px]:grid-cols-6 max-[1599px]:gap-4 justify-between items-stretch mt-0">
-        {topics.map((topic) => (
+        {topics.map((topic) => (     
             <Link href="/" key={topic.id}
-                className="relative flex bg-[#282b3a] top-0 py-[1.2rem] pl-6 pr-10 rounded-xl overflow-hidden justify-between">
+                className="relative flex bg-[#282b3a] top-0 py-[1.2rem] pl-6 pr-10 rounded-xl overflow-hidden justify-between transition-transform duration-200 ease-in-out hover:-translate-y-2">
                 <div style={{backgroundColor: topic.bgColor}} 
                     className="absolute inset-0 z-[1] before:content-[''] before:absolute before:inset-0 
                         before:bg-[linear-gradient(-40deg,rgba(255,255,255,0.2),rgba(255,255,255,0)_430%,rgba(255,255,255,0)_0,rgba(255,255,255,0.2))] 
@@ -78,7 +78,7 @@ const TopicSection = ({topics}: TopicSectionProps) => {
             </Link>
             ))}
             <Link href="/" 
-                className="relative flex bg-[#282b3a] top-0 rounded-xl overflow-hidden justify-between items-center gap-4 p-4">
+                className="relative flex bg-[#282b3a] top-0 rounded-xl overflow-hidden justify-between items-center gap-4 p-4 transition-transform duration-200 ease-in-out hover:-translate-y-2">
                 <div style={{backgroundColor: "rgb(46, 50, 69)"}} 
                     className="absolute inset-0 z-[1] before:content-[''] before:absolute before:inset-0 
                         before:bg-[linear-gradient(-40deg,rgba(255,255,255,0.2),rgba(255,255,255,0)_430%,rgba(255,255,255,0)_0,rgba(255,255,255,0.2))] 

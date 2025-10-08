@@ -8,6 +8,7 @@ type ButtonNav_v2Props = {
 const ButtonNav_v2 = ({id}: ButtonNav_v2Props) => {
     return (
         <div>
+            
             <style jsx>{`
                 .swiper-button-disabled {
                     opacity: 0 !important;
@@ -15,6 +16,7 @@ const ButtonNav_v2 = ({id}: ButtonNav_v2Props) => {
                     cursor: default !important;    
                 }
             `}</style>
+
             <button className={`nav-next-${id} cursor-pointer absolute z-10 top-[calc(50%-28px)] transform -translate-y-1/2 translate-x-full w-10 h-10 bg-white text-white rounded-full 
                 p-0 flex items-center justify-center right-5 opacity-100 shadow-[0_0_20px_5px_#0003] transition-opacity duration-200`}>
                 <FontAwesomeIcon icon={faChevronRight} size="sm" color="#000"/>

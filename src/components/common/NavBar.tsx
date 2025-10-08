@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { NAV_ITEMS } from "@/features/home/constants/navItems";
 
-const NavPrimary = () => {
+const NavBar = () => {
   return (
     <div className="max-[1919px]:gap-2 flex items-center">
       {NAV_ITEMS.map((item) => (
@@ -25,6 +25,6 @@ const NavPrimary = () => {
   );
 };
 
-export default NavPrimary;
+export default NavBar;
 
 
