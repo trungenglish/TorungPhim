@@ -1,0 +1,1 @@
+export type MovieKind = 'SERIES' | 'SINGLE' | 'UPCOMING';

@@ -1,25 +1,32 @@
-'use client'
+"use client";
 
-import { Input } from "@/components/ui/input"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const SearchBar = () => {
+type SearchBar = {
+  placeholder?: string;
+  className?: string;
+};
+
+const SearchBar = ({ placeholder = "Tìm kiếm phim, diễn viên", className = "" }: SearchBar) => {
   return (
-    <div className="hidden min-[1360px]:block flex-shrink">
-      <div className="relative w-[clamp(160px,20vw,270px)]">
-        <FontAwesomeIcon 
-          icon={faSearch} 
-          className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" 
-        />
-        <Input
+    <search className={`relative w-full max-w-[23rem] ${className}`}>
+      <div className="relative">
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[16px] p-[3px]">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </div>
+        <input
+          id="search"
+          className="w-full h-[2.8rem] leading-8 px-12 py-[0.4rem] bg-white/10 text-white text-sm rounded-[0.4rem] border border-solid !border-transparent !outline-none !shadow-none"
+          placeholder={placeholder}
           type="search"
-          placeholder="Tìm kiếm phim, diễn viên"
-          className="w-full pl-10 pr-4 h-11 bg-secondary/50 border-secondary hover:bg-secondary/70 focus:bg-secondary transition-all duration-200"
+          autoComplete="off"
         />
       </div>
-    </div>
-  )
-}
+    </search>
+  );
+};
 
-export default SearchBar
+export default SearchBar;
+
+
