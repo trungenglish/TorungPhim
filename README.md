@@ -1,65 +1,41 @@
-# 🎬 Torung-Phim Web
+# 🎬 Torung Phim Web
 
-Frontend project structure for **Torung-Phim**.  
-This project follows a **feature-based architecture** for better scalability and maintainability.
+Kiến trúc frontend theo hướng feature-based với Next.js (App Router).
 
 ---
 
-## 📂 Folder Structure
+## 📁 Thư mục chính và mục đích sử dụng
 
-```text
-src/
-  app/            # Application setup (store, routes, providers)
-    store.ts      # Redux store or state management setup
-    router.tsx    # Application routes
-    providers/    # Global providers (theme, auth, query client, etc.)
+- `src/app/`
+  - Vỏ ứng dụng và route theo App Router. Đây là nơi lắp ghép các section/feature để tạo nên trang.
 
-  components/     # Reusable UI components across the app
-    ui/           # Atomic UI components (Button, Input, Modal, etc.)
-    constants/    # Global constants used across components
+- `src/components/`
+  - `common/`: Các component UI dùng chung toàn dự án (header, footer, thẻ thông tin, card, navigation...). Không chứa logic dữ liệu, chỉ nhận dữ liệu qua props.
+  - `ui/`: Các thành phần UI cơ bản (button, input, dialog, form...). Dùng làm “building blocks” cho component cấp cao hơn.
 
-  features/       # Feature-based modules
-    auth/         # Example feature: Authentication
-      components/ # Feature-specific components
-      constants/  # Feature-specific constants
-      hooks/      # Feature-specific custom hooks
-      services/   # API calls for the feature
-      types/      # TypeScript types/interfaces for the feature
-    movie/        # Another feature (e.g., Movie listing)
+- `src/features/`
+  - Gom nhóm theo tính năng (feature).
+  - `home/`: Code cho trang chủ.
+    - `components/`: Các section hiển thị (Hero, các carousel Style1..6, TopicSection, CommunityTable...). Mang tính trình bày, nhận data qua props.
+    - `constants/`: Dữ liệu mock/const phục vụ trang chủ (anime, movies, topics, comments...). `app/page.tsx` sẽ import và truyền xuống component.
+    - `types/`: Kiểu dữ liệu dùng riêng cho feature home (giúp đồng bộ types giữa các component).
+  - `auth/`: Màn hình/logic liên quan đăng nhập/đăng ký.
+    - `components/`: Modal, form...
+    - `hooks/`: State/UI logic cho auth (vd: mở/đóng modal).
+    - `constants/`, `services/`, `types/`: Cấu hình, gọi API và kiểu dữ liệu cho auth.
 
-  hooks/          # Global custom hooks (used across multiple features)
-    useLocalStorage.ts
+- `src/constants/`
+  - Hằng số dùng chung toàn app, không thuộc riêng feature nào (vd: mapping màu, mock data dùng chung).
 
-  lib/            # Third-party or app-wide library configurations
-    axiosClient.ts# Axios config instance
-    i18n.ts       # Localization setup
+- `src/hooks/`
+  - Hook dùng chung (vd: hook theo dõi scroll cho header). Có thể dùng ở bất kỳ component nào.
 
-  services/       # Global services (not tied to a single feature)
-    uploadService.ts
+- `src/lib/`
+  - Tiện ích cấp ứng dụng: helper, utils, validations. Không gắn với UI hay một feature cụ thể.
 
-  types/          # Global TypeScript types & interfaces
-    User.ts
-    ApiResponse.ts
+- `src/services/`, `src/types/`, `src/utils/`
+  - Dịch vụ dùng chung (client/API), kiểu dữ liệu toàn cục, và hàm tiện ích dùng lại nhiều nơi.
 
-  utils/          # Utility/helper functions
-    formatDate.ts
-    calculateDiscount.ts
-    storage.ts
+---
 
-  index.tsx       # App entry point
-```
-
-## 🚀 Getting Started
-
-1. Install dependencies:
-   ```sh
-   pnpm install
-   ```
-2. Start development server:
-   ```sh
-   pnpm dev
-   ```
-3. Build for production:
-   ```sh
-   pnpm build
-   ```
+Gợi ý luồng dữ liệu: `src/app/page.tsx` nhập dữ liệu tĩnh từ `features/home/constants` và truyền xuống các component trình bày trong `features/home/components`. Khi tích hợp API thật, tạo hook theo feature (trong `features/<feature>/hooks`) để lấy dữ liệu rồi vẫn truyền xuống component.

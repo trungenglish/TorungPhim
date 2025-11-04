@@ -1,7 +1,8 @@
 'use client';
 
 import Link from "next/link";
-import MovieBadges from "./MovieBadges";
+import MovieBadges from "../MovieBadges";
+
 
 
 interface MovieCardVerticalV1Props {

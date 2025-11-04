@@ -1,28 +1,47 @@
-'use client';
+"use client";
 
 import HeroSection from "@/features/home/components/HeroSection";
-import {featuredMovie} from "@/constants/mockData";
 import TopicSection from "@/features/home/components/TopicSection";
 import { topics } from "@/features/home/constants/topics";
-import CountryMoviesCarousel from "@/features/home/components/CountryMoviesCarousel";
 import { MovieData } from "@/features/home/constants/CountryMoviesCarousel";
-import Community from "@/features/home/components/Community";
+import Community from "@/features/home/components/CommunityTable";
 import { Comments } from "@/features/home/constants/comment";
-import Top10Movies from "@/features/home/components/Top10Movies";
 import { Top10Movies as Top10MoviesData } from "@/features/home/constants/Top10Movies";
-import ThemeMoviesCarouselVertical from "@/features/home/components/ThemeMoviesCarouselVertical";
+import Style1_CarouselVertical from "@/features/home/components/Style1_CarouselVertical";
+import Style6_CarouselHorizontal from "@/features/home/components/Style6_CarouselHorizontal";
+import Style4_CarouselVertical from "@/features/home/components/Style4_CarouselVertical";
+import Style3_CarouselHorizontal from "@/features/home/components/Style3_CarouselHorizontal";
+import Style5_CarouselHorizontal from "@/features/home/components/Style5_CarouselHorizontal";
+import Style2_CarouselVertical from "@/features/home/components/Style2_CarouselVertical";
+import { AnimeData } from "@/features/home/constants/anime";
 
 export default function Home() {
-
   return (
     <>
-      <HeroSection movie={featuredMovie}/>
-      <div className="flex flex-col gap-12 pb-16 max-w-screen">
+      <HeroSection movies={AnimeData} />
+      <div className="relative z-[9] pt-0 pb-40 min-h-[calc(100vh-400px)]">
+        <div className="flex flex-col gap-[50px]">
           <TopicSection topics={topics} />
-          <CountryMoviesCarousel movies={MovieData} />
+          <Style6_CarouselHorizontal type="SERIES" movies={MovieData} />
           <Community comments={Comments} />
-          <ThemeMoviesCarouselVertical type="SERIES" movies={Top10MoviesData} />
-          <Top10Movies type="SERIES" movies={Top10MoviesData} />
+          <Style1_CarouselVertical
+            type="SINGLE"
+            movies={Top10MoviesData}
+            id="1"
+          />
+          <Style4_CarouselVertical
+            type="SERIES"
+            movies={Top10MoviesData}
+            id="2"
+          />
+          <Style3_CarouselHorizontal type="SERIES" movies={MovieData} id="3" />
+          <Style5_CarouselHorizontal
+            type="UPCOMING"
+            movies={MovieData}
+            id="4"
+          />
+          <Style2_CarouselVertical movies={AnimeData} />
+        </div>
       </div>
     </>
   );

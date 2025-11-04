@@ -1,0 +1,62 @@
+'use client'
+
+import Link from 'next/link'
+import MovieBadges from '../MovieBadges';
+
+type MovieCardHorizontalV1Props = {
+  type: 'SERIES' | 'SINGLE' | 'UPCOMING';
+  movie: {
+    id: string
+    name: string
+    enName: string
+    image: string
+    subtitleEp?: number
+    dubbedEp?: number
+    voicedEp?: number
+  }
+};
+
+const MovieCardHorizontal_v1 = ({ type, movie }: MovieCardHorizontalV1Props) => {
+  return (
+    <div className="relative w-full">
+      <Link href="#" className="block relative pb-[56%] w-full h-0 rounded-lg overflow-hidden">
+        {/* Movie Badges */}
+        <MovieBadges type={type} 
+          subtitleEp={movie.subtitleEp} 
+          dubbedEp={movie.dubbedEp} 
+          voicedEp={movie.voicedEp} />
+
+        <img
+          className="absolute inset-0 w-full h-full object-cover"
+          src={movie.image}
+          alt={movie.name}
+        />
+      </Link>
+
+      <div className="relative px-4 py-3 flex flex-row justify-between gap-5 items-start">
+        <div className="grow">
+          <h4 className="font-medium mb-0 leading-normal text-[1em] text-white line-clamp-1">
+            <Link 
+              className=" hover:text-yellow-300 transition-colors duration-200" 
+              title={movie.name} 
+              href="#"
+            >
+              {movie.name}
+            </Link>
+          </h4>
+          <h4 className="text-[#aaa] text-[0.9rem] mb-0 leading-normal line-clamp-1 font-normal">
+            <Link 
+              className="hover:text-white transition-colors duration-200"
+              title={movie.enName} 
+              href="#"
+            >
+              {movie.enName}
+            </Link>
+          </h4>
+        </div>  
+      </div>
+    </div>
+  )
+}
+
+export default MovieCardHorizontal_v1
