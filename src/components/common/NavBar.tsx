@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { NAV_ITEMS } from "@/features/home/constants/navItems";
+import { NAV_ITEMS } from "@/constants/navItems";
 
 const NavBar = () => {
   return (

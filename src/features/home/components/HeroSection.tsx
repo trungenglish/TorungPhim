@@ -66,7 +66,6 @@ const HeroSection = ({ movies }: HeroSectionProps) => {
                             className="inset-0 w-full h-full object-cover bg-black"/>
                     </SwiperSlide>
                 ))}
-
             </Swiper>
         </section>
   );
