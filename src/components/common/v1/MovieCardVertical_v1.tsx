@@ -3,8 +3,6 @@
 import Link from "next/link";
 import MovieBadges from "../MovieBadges";
 
-
-
 interface MovieCardVerticalV1Props {
     type: 'SERIES' | 'SINGLE';
     movie: {
@@ -21,7 +19,7 @@ interface MovieCardVerticalV1Props {
 const MovieCardVertical_v1 = ({type, movie}: MovieCardVerticalV1Props) => {
     return (
         <div className="relative w-full flex flex-col gap-3">
-            <Link className="relative bg-transparent w-full h-0 pb-[150%] overflow-hidden rounded-lg"
+            <Link className="relative bg-transparent w-full h-0 pb-[150%] overflow-hidden rounded-xl"
                 href="/"
             >
                 <MovieBadges type={type}

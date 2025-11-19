@@ -10,7 +10,6 @@ import "swiper/css/navigation";
 import { Titles } from "../constants/CountryMoviesCarousel"
 import MovieCardHorizontal_v1 from "@/components/common/v1/MovieCardHorizontal_v1"
 import ButtonNav_v2 from "@/components/common/v2/ButtonNav_v2"
-import MovieCardHorizontalSkeleton from "@/components/skeleton/MovieCardHorizontalSkeleton"
 
 type Style6_CarouselHorizontalProps = {
   type: 'SERIES' | 'SINGLE' | 'UPCOMING';

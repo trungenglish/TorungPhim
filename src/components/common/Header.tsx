@@ -31,7 +31,7 @@ const Header = () => {
     // </header>
 
     <header
-      className={`block fixed top-0 right-0 left-0 z-10 transition-[background-color,backdrop-filter] duration-300 ${
+      className={`block fixed top-0 right-0 left-0 z-30 transition-[background-color,backdrop-filter] duration-300 ${
         isScrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
       }`}
     >
