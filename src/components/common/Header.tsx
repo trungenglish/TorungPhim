@@ -35,7 +35,7 @@ const Header = () => {
         isScrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <div className={`max-[1919px]:px-5 max-[1919px]:gap-6 flex items-center justify-between ${isScrolled ? "h-[70px]" : "h-[90px]"}`}>
+      <div className={`px-5 gap-6 flex items-center justify-between ${isScrolled ? "h-[70px]" : "h-[90px]"}`}>
         {/* Mobile Buttons */}
         <MobileButtons />
         <MobileSearch />
@@ -45,7 +45,7 @@ const Header = () => {
           <img
             src="https://www.rophim.mx/images/logo.svg"
             alt="logo"
-            className="w-auto max-[1919px]:h-10"
+            className="w-auto h-10"
           />
         </Link>
 

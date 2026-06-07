@@ -10,10 +10,10 @@ const MemberButton = () => {
   const dispatch = useAppDispatch()
 
   return (
-    <div className="max-[1919px]:gap-2 flex items-center">
+    <div className="gap-2 flex items-center">
       <button
         type="button"
-        className="bg-white text-[1em] text-black max-[1919px]:min-w-[125px] px-[0.8rem] py-2 rounded-[3rem] border border-solid border-[rgb(255,255,255,0.5)] opacity-90 font-medium whitespace-nowrap text-center cursor-pointer"
+        className="bg-white text-[1em] text-black min-w-[125px] px-[0.8rem] py-2 rounded-[3rem] border border-solid border-[rgb(255,255,255,0.5)] opacity-90 font-medium whitespace-nowrap text-center cursor-pointer"
         onClick={() => dispatch(openModal('login'))}
       >
         <div className="inline-flex items-center gap-2">

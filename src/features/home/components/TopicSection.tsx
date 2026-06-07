@@ -49,7 +49,7 @@ const TopicSection = ({topics}: TopicSectionProps) => {
                 Bạn đang quan tâm gì
             </h3>
         </div>
-        <div className="grid max-[1599px]:grid-cols-6 max-[1599px]:gap-4 justify-between items-stretch mt-0">
+        <div className="grid grid-cols-6 gap-4 justify-between items-stretch mt-0">
         {topics.map((topic) => (     
             <Link href="/" key={topic.id}
                 className="relative flex bg-[#282b3a] top-0 py-[1.2rem] pl-6 pr-10 rounded-xl overflow-hidden justify-between transition-transform duration-200 ease-in-out hover:-translate-y-2">
