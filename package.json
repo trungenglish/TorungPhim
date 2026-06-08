@@ -2,6 +2,7 @@
   "name": "torung-phim",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.14.0",
   "scripts": {
     "test": "echo 'No tests yet'",
     "dev": "next dev --turbopack",
