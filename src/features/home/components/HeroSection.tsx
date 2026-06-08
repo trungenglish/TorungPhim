@@ -57,18 +57,18 @@ const HeroSection = ({ movies }: HeroSectionProps) => {
                 slidesPerView={6}
                 spaceBetween={5}
             >
-                
+
                 {movies.map((movie) => (
                     <SwiperSlide key={movie.id}
-                    className="relative !h-[45px] cursor-pointer border-2 border-solid border-white rounded-lg overflow-hidden transform scale-100"
+                        className="relative !h-[45px] cursor-pointer border-2 border-solid border-white rounded-lg overflow-hidden transform scale-100"
                     >
-                        <img src={movie.image} 
-                            className="inset-0 w-full h-full object-cover bg-black"/>
+                        <img src={movie.image}
+                            className="inset-0 w-full h-full object-cover bg-black" />
                     </SwiperSlide>
                 ))}
             </Swiper>
         </section>
-  );
+    );
 };
-                
+
 export default HeroSection;
