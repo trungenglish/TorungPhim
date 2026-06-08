@@ -35,7 +35,7 @@ jobs:
             ${{ runner.os }}-pnpm-
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --only-built-dependencies=@tailwindcss/oxide,sharp,unrs-resolver
 
       - name: Lint code
         run: pnpm lint
