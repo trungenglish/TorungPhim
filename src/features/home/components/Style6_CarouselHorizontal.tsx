@@ -27,7 +27,7 @@ type Style6_CarouselHorizontalProps = {
 const Style6_CarouselHorizontal = ({type, movies}: Style6_CarouselHorizontalProps) => {
     
     return (
-        <section className="relative animate-fade-in-up max-w-[1900px] z-10 max-[1919px]:py-0 max-[1919px]:px-5 w-full mx-auto my-0">
+        <section className="relative animate-fade-in-up max-w-[1900px] z-10 py-0 px-5 w-full mx-auto my-0">
           <div className="rounded-2xl p-8 gap-8 bg-[linear-gradient(0deg,#282b3a00_20%,#282b3a)] flex justify-between flex-col items-stretch mt-0">
             
             {Titles.map((title) => (
@@ -73,6 +73,7 @@ const Style6_CarouselHorizontal = ({type, movies}: Style6_CarouselHorizontalProp
                       {movies.map((movie) => (
                         <SwiperSlide key={movie.id}>
                           <MovieCardHorizontal_v1 type={type} movie={movie}/>
+                          {/* <MovieCardHorizontalSkeleton /> */}
                         </SwiperSlide>
                       ))}
                     </Swiper>

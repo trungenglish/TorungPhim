@@ -23,7 +23,7 @@ type Style4_CarouselVerticalProps = {
 const Style4_CarouselVertical = ({type, movies, id}: Style4_CarouselVerticalProps) => {
 
     return (
-        <div className="relative animate-fade-in-up max-w-[1900px] max-[1919px]:px-5 max-[1919px]:py-0 w-full my-0 mx-auto">
+        <div className="relative animate-fade-in-up max-w-[1900px] px-5 py-0 w-full my-0 mx-auto">
             {/* Title Section */}
             <CarouselHeader 
                 title="Top 10 phim bộ hôm nay" 

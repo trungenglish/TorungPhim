@@ -18,7 +18,7 @@ import { AnimeData } from "@/features/home/constants/anime";
 export default function Home() {
   return (
     <>
-      <HeroSection movies={AnimeData} />
+      <HeroSection  movies={AnimeData}/>
       <div className="relative z-[9] pt-0 pb-40 min-h-[calc(100vh-400px)]">
         <div className="flex flex-col gap-[50px]">
           <TopicSection topics={topics} />

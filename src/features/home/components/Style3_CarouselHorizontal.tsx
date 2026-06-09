@@ -21,7 +21,7 @@ type Style3_CarouselHorizontalProps = {
 const Style3_CarouselHorizontal = ({type, movies, id}: Style3_CarouselHorizontalProps) => {
 
     return (
-        <div className="relative animate-fade-in-up max-w-[1900px] max-[1919px]:px-5 max-[1919px]:py-0 w-full mx-auto my-0">
+        <div className="relative animate-fade-in-up max-w-[1900px] px-5 py-0 w-full mx-auto my-0">
             {/* Title Section */}
             <CarouselHeader 
                 title="Phim điện ảnh mới cóong" 

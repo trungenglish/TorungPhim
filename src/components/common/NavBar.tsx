@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { NAV_ITEMS } from "@/features/home/constants/navItems";
+import { NAV_ITEMS } from "@/constants/navItems";
 
 const NavBar = () => {
   return (
-    <div className="max-[1919px]:gap-2 flex items-center">
+    <div className="gap-2 flex items-center">
       {NAV_ITEMS.map((item) => (
-        <div key={item.label} className="max-[1919px]:py-0 max-[1919px]:px-2 text-[13px] leading-9 shrink-0 whitespace-nowrap text-white">
+        <div key={item.label} className="py-0 px-2 text-[13px] leading-9 shrink-0 whitespace-nowrap text-white">
           <div className="relative">
             <Link href={item.href} className="flex items-center text-inherit">
               {item.badgeText ? (

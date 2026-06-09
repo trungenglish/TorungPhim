@@ -45,7 +45,7 @@ const Style2_CarouselVertical = ({ movies}: Style2_CarouselVerticalProps) => {
 
             <div className="pb-8">
                 <Swiper
-                    className="max-[1599px]:h-[460px] m-0 rounded-[1.2rem] w-full bg-[#202331]"
+                    className="h-[460px] m-0 rounded-[1.2rem] w-full bg-[#202331]"
                     modules={[EffectFade, Thumbs]}
                     effect="fade"
                     watchSlidesProgress
