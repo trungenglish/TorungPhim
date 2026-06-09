@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faInfoCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
 import InfoChips from "@/components/common/InfoChips";
@@ -38,11 +39,11 @@ const HeroSlideContent = ({ movie }: HeroSlideContentProps) => {
                             animate-cover-fade [-webkit-mask-image:linear-gradient(0deg,transparent_0,black_20%,black_80%,transparent)]">
                 <div className="relative w-full h-full block animate-hide-show 
                                 [-webkit-mask-image:linear-gradient(90deg,transparent_10px,rgba(0,0,0,.2)_15%,black_40%,black_80%,transparent_99%)]">
-                    <img
-                        loading="lazy"
+                    <Image
                         src={movie.bgImage}
-                        alt=""
-                        className="absolute inset-0 w-full h-full object-cover visible transition-[opacity,filter] duration-500 ease-in"
+                        alt={movie.name}
+                        fill
+                        className="object-cover visible transition-[opacity,filter] duration-500 ease-in"
                     />
                 </div>
             </div>
@@ -51,8 +52,14 @@ const HeroSlideContent = ({ movie }: HeroSlideContentProps) => {
                 <div className="relative z-[5] w-full animate-slide-content pt-0 px-[30px] pb-[60px] max-w-[600px]">
                     <div className="mb-4">
                         <Link href="/">
-                            <img src={movie.image} alt="" 
-                                className="max-w-[500px] max-h-[130px]"/>
+                            <Image
+                                src={movie.image}
+                                alt={movie.name}
+                                width={500}
+                                height={130}
+                                priority
+                                className="w-auto h-auto max-w-[500px] max-h-[130px]"
+                            />
                         </Link>
                     </div>
                     {/* <h3 className="text-[3em] leading-[1.3] mb-2 font-bold [text-shadow:0_2px_1px_rgba(0,0,0,0.3)] text-white">
@@ -64,13 +71,13 @@ const HeroSlideContent = ({ movie }: HeroSlideContentProps) => {
                         </Link>
                     </h3>
 
-                    <InfoChips imdb={movie.imdb} 
-                        age={movie.age} 
-                        release={movie.release} 
-                        part={movie.part} 
+                    <InfoChips imdb={movie.imdb}
+                        age={movie.age}
+                        release={movie.release}
+                        part={movie.part}
                         episode={movie.episode} />
 
-                    <GenreTags genres={movie.genres} /> 
+                    <GenreTags genres={movie.genres} />
 
                     <DescribeMovie description={movie.description} />
 

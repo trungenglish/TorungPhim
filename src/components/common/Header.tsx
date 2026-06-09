@@ -4,6 +4,7 @@ import { useScrolled } from "@/hooks/useScrolled";
 import MobileButtons from "./MobileButtons";
 import MobileSearch from "./MobileSearch";
 import Link from "next/link";
+import Image from "next/image";
 import SearchBar from "./SearchBar";
 import NavBar from "./NavBar";
 import AppDownloadCTA from "./AppDownloadCTA";
@@ -31,21 +32,24 @@ const Header = () => {
     // </header>
 
     <header
-      className={`block fixed top-0 right-0 left-0 z-10 transition-[background-color,backdrop-filter] duration-300 ${
+      className={`block fixed top-0 right-0 left-0 z-30 transition-[background-color,backdrop-filter] duration-300 ${
         isScrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <div className={`max-[1919px]:px-5 max-[1919px]:gap-6 flex items-center justify-between ${isScrolled ? "h-[70px]" : "h-[90px]"}`}>
+      <div className={`px-5 gap-6 flex items-center justify-between ${isScrolled ? "h-[70px]" : "h-[90px]"}`}>
         {/* Mobile Buttons */}
         <MobileButtons />
         <MobileSearch />
 
         {/* Logo */}
         <Link href="/" className="shrink-0 relative z-[3]">
-          <img
+          <Image
             src="https://www.rophim.mx/images/logo.svg"
-            alt="logo"
-            className="w-auto max-[1919px]:h-10"
+            alt="TorungPhim Logo"
+            width={160}
+            height={40}
+            className="w-auto h-10"
+            unoptimized
           />
         </Link>
 

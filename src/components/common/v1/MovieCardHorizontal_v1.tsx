@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import MovieBadges from '../MovieBadges';
 
 type MovieCardHorizontalV1Props = {
@@ -26,10 +27,11 @@ const MovieCardHorizontal_v1 = ({ type, movie }: MovieCardHorizontalV1Props) => 
           dubbedEp={movie.dubbedEp} 
           voicedEp={movie.voicedEp} />
 
-        <img
-          className="absolute inset-0 w-full h-full object-cover"
+        <Image
+          className="object-cover"
           src={movie.image}
           alt={movie.name}
+          fill
         />
       </Link>
 

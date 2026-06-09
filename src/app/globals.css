@@ -234,6 +234,29 @@
       opacity: 1;
     }
   }
-  
+
+  /* Shimmer animation for skeletons */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      #242634 0%,
+      #2d3040 25%,
+      #3a3d50 50%,
+      #2d3040 75%,
+      #242634 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 1.8s ease-in-out infinite;
+    border-radius: inherit;
+  }
 
 }

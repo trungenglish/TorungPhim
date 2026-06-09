@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/thumbs';
 import Link from "next/link";
+import Image from "next/image";
 import InfoChips from "@/components/common/InfoChips";
 import ActionButtons from "@/components/common/ActionButtons";
 import GenreTags from "@/components/common/GenreTags";
@@ -45,7 +46,7 @@ const Style2_CarouselVertical = ({ movies}: Style2_CarouselVerticalProps) => {
 
             <div className="pb-8">
                 <Swiper
-                    className="max-[1599px]:h-[460px] m-0 rounded-[1.2rem] w-full bg-[#202331]"
+                    className="h-[460px] m-0 rounded-[1.2rem] w-full bg-[#202331]"
                     modules={[EffectFade, Thumbs]}
                     effect="fade"
                     watchSlidesProgress
@@ -59,7 +60,7 @@ const Style2_CarouselVertical = ({ movies}: Style2_CarouselVerticalProps) => {
                                 {/*Image */}
                                 <div className="absolute w-[calc(100%-500px)] h-full left-auto right-0 transform-none max-w-[1990px] top-0 [mask-image:linear-gradient(90deg,transparent_0,black_30%,black)]">
                                     <div className="relative w-full h-full">
-                                        <img src={movie.bgImage} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover"/>
+                                        <Image src={movie.bgImage} alt={movie.name} fill className="object-cover"/>
                                     </div>
                                 </div>
 
@@ -107,8 +108,8 @@ const Style2_CarouselVertical = ({ movies}: Style2_CarouselVerticalProps) => {
                               [&.swiper-slide-thumb-active]:border-white"
                         >
                             <div className="block relative w-full h-0 pb-[150%] overflow-hidden rounded-lg bg-black">
-                                <img loading="lazy" src={movie.image} alt="" 
-                                    className="absolute w-full h-full inset-0 object-cover"/>
+                                <Image src={movie.image} alt={movie.name} fill 
+                                    className="object-cover"/>
                             </div>
                         </SwiperSlide>
                     ))}

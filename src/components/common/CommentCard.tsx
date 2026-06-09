@@ -3,6 +3,7 @@
 import { faCircleDown, faCircleUp, faInfinity, faMessage, } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import Image from "next/image";
 
 interface CommentCardProps {
     comment: {
@@ -21,9 +22,8 @@ const CommentCard = ({comment}: CommentCardProps) => {
            {/* Poster Background */}
            <div className="absolute inset-0">
                 {/* Background Image */}
-                <img src={comment.poster} alt="background" 
-                    className="w-full h-full object-cover blur-sm opacity-40 scale-110"
-                    loading="lazy"
+                <Image src={comment.poster} alt="background" 
+                    fill className="object-cover blur-sm opacity-40 scale-110"
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-[#0c1118]"></div>
@@ -33,8 +33,8 @@ const CommentCard = ({comment}: CommentCardProps) => {
            <div className="relative flex flex-col gap-3 z-[1]">
                 {/* Avatar */}
                 <div className="border-2 border-solid w-[50px] h-[50px] rounded-full relative overflow-hidden">
-                    <img src={comment.avatar} alt={comment.name} 
-                    loading="lazy" className="absolute w-full h-full object-cover"
+                    <Image src={comment.avatar} alt={comment.name} 
+                    fill className="object-cover"
                     />
                 </div>
 
@@ -81,9 +81,9 @@ const CommentCard = ({comment}: CommentCardProps) => {
            {/* Thumbnail */}    
            <div className="absolute top-5 right-5 shrink-0 w-[50px] z-10">
                 <Link href="/" className="block relative rounded-[0.3rem] w-full pb-[150%] h-0 overflow-hidden bg-black">
-                    <img src={comment.thumbnail} 
+                    <Image src={comment.thumbnail} 
                         alt={`Xem phim ${comment.name}`}
-                        className="absolute w-full h-full top-0 left-0 right-0 bottom-0 object-cover hover:scale-110 transition-transform duration-300" loading="lazy" />
+                        fill className="object-cover hover:scale-110 transition-transform duration-300" />
                 </Link>
            </div>
         </div>

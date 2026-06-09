@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFacebookF, faInstagram, faTelegram, faXTwitter, faYoutube} from '@fortawesome/free-brands-svg-icons';
 import {faEnvelope, faPhone, faLocationDot} from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +14,7 @@ const Footer = () => {
                     {/* Logo and Description */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-2 mb-4">
-                            <img src="/" alt="TORUNG" className="h-10 w-10" />
+                            <Image src="/favicon.ico" alt="TORUNG" width={40} height={40} />
                             <span className="text-2xl font-bold text-foreground">TORUNGPHIM</span>
                         </div>
                         <p className="text-muted-foreground text-sm leading-relaxed mb-6">

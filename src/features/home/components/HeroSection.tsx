@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { useState } from "react";
 import type { Swiper as SwiperClass } from "swiper";
 import HeroSlideContent from "./HeroSlideContent";
+import Image from "next/image";
 
 type HeroSectionProps = {
     movies: {
@@ -35,7 +36,7 @@ const HeroSection = ({ movies }: HeroSectionProps) => {
         <section className="relative">
             <Swiper
                 effect="fade"
-                className="max-[1919px]:h-[760px] p-0 w-full -mb-[120px] bg-[#202331] before:content-[''] before:z-[3]
+                className="h-[760px] p-0 w-full -mb-[120px] bg-[#202331] before:content-[''] before:z-[3]
                     before:absolute before:bottom-0 before:left-0 before:right-0 before:h-[100px] before:bg-gradient-to-t before:from-[#191b24] before:to-[#191b2400]"
                 slidesPerView={1}
                 modules={[EffectFade, Thumbs]}
@@ -50,26 +51,27 @@ const HeroSection = ({ movies }: HeroSectionProps) => {
             </Swiper>
 
             <Swiper
-                className="!absolute max-[1599px]:right-[30px] max-[1599px]:bottom-[172px] w-[450px]"
+                className="!absolute right-[30px] bottom-[172px] w-[450px]"
                 modules={[Thumbs]}
                 onSwiper={setThumbsSwiper}
                 watchSlidesProgress
                 slidesPerView={6}
                 spaceBetween={5}
             >
-                
+
                 {movies.map((movie) => (
                     <SwiperSlide key={movie.id}
-                    className="relative !h-[45px] cursor-pointer border-2 border-solid border-white rounded-lg overflow-hidden transform scale-100"
+                        className="relative !h-[45px] cursor-pointer border-2 border-solid border-white rounded-lg overflow-hidden transform scale-100"
                     >
-                        <img src={movie.image} 
-                            className="inset-0 w-full h-full object-cover bg-black"/>
+                        <Image src={movie.image}
+                            alt={movie.name}
+                            fill
+                            className="object-cover bg-black" />
                     </SwiperSlide>
                 ))}
-
             </Swiper>
         </section>
-  );
+    );
 };
-                
+
 export default HeroSection;

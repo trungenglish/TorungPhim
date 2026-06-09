@@ -16,13 +16,13 @@ type Style5_CarouselHorizontalProps = {
     }[];
 };
 
-const Style5_CarouselHorizontal = ({type, movies, id}: Style5_CarouselHorizontalProps) => {
+const Style5_CarouselHorizontal = ({ type, movies, id }: Style5_CarouselHorizontalProps) => {
     return (
-        <div className="relative animate-fade-in-up max-w-[1900px] z-10 max-[1919px]:py-0 max-[1919px]:px-5 w-full mx-auto my-0">
-            <CarouselHeader 
-                title="Phim sắp chiếu" 
-                href="#" 
-                type="2" 
+        <div className="relative animate-fade-in-up max-w-[1900px] z-10 py-0 px-5 w-full mx-auto my-0">
+            <CarouselHeader
+                title="Phim sắp chiếu"
+                href="#"
+                type="2"
             />
 
             <div className="relative">
@@ -44,7 +44,7 @@ const Style5_CarouselHorizontal = ({type, movies, id}: Style5_CarouselHorizontal
                 >
                     {movies.map((movie) => (
                         <SwiperSlide key={movie.id}>
-                            <MovieCardHorizontal_v1 type="UPCOMING" movie={movie}/>
+                            <MovieCardHorizontal_v1 type="UPCOMING" movie={movie} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

@@ -1,6 +1,7 @@
 import { faPlay, faVenus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import Image from "next/image";
 
 interface CommentProps {
     userName: string;
@@ -17,7 +18,7 @@ const Comment = ({ userName, avatar, comment, movieName,  }: CommentProps) => {
         >
             {/* Avatar */}
             <div className="absolute top-4 left-[0.8rem] w-[40px] h-[40px] rounded-full shrink-0 overflow-hidden bg-black">
-                <img src={avatar} alt={userName} className="absolute w-full h-full object-cover top-0 left-0 right-0 bottom-0"/>
+                <Image src={avatar} alt={userName} fill className="object-cover"/>
             </div>
 
             {/* User comment */}

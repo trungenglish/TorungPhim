@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import MovieBadges from "../MovieBadges";
 
 type MovieCardHorizontal_v2Props = {
@@ -27,10 +28,10 @@ const MovieCardHorizontal_v2 = ({type, movie}: MovieCardHorizontal_v2Props) => {
                     subtitleEp={movie.subtitleEp}
                 />
 
-                <img src={movie.image} 
+                <Image src={movie.image} 
                     alt={movie.name} 
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                 />               
             </Link> 
 
@@ -38,10 +39,10 @@ const MovieCardHorizontal_v2 = ({type, movie}: MovieCardHorizontal_v2Props) => {
                 <div className="-mt-[60px] w-20 shrink-0 ">
                     <Link href="/"
                         className="relative pb-[150%] shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] w-full h-0 rounded-lg block overflow-hidden">
-                            <img src={movie.image} 
+                            <Image src={movie.image} 
                                 alt={movie.name} 
-                                loading="lazy"
-                                className="absolute inset-0 w-full h-full object-cover"
+                                fill
+                                className="object-cover"
                             />
                     </Link>
                 </div>
