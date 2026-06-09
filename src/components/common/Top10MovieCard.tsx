@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import MovieBadges from "./MovieBadges";
 
 interface Top10MovieCardProps {
@@ -37,10 +38,10 @@ const Top10MovieCard = ({type, movie, index = 0}: Top10MovieCardProps) => {
                 />
 
                 {/* Image */}
-                <img src={movie.image} 
+                <Image src={movie.image} 
                     alt={movie.name} 
-                    loading="lazy"
-                    className={`absolute inset-0 w-full h-full object-cover ${index % 2 === 0 ? 'clip-poster' : 'clip-poster-reverse'}`}
+                    fill
+                    className={`object-cover ${index % 2 === 0 ? 'clip-poster' : 'clip-poster-reverse'}`}
                 />   
             </Link>
 

@@ -1,6 +1,7 @@
-import { faArrowTrendDown, faArrowTrendUp, faFolderPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { faArrowTrendDown, faArrowTrendUp, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import Image from "next/image";
 import { genreColors } from "@/constants/genreColors";
 
 interface ChartListProps {
@@ -46,8 +47,8 @@ const ChartList = ({type, data}: ChartListProps) => {
                         <> 
                             {/* Thumbnail */}
                             <div className="relative w-[25px] pb-9 rounded-xs overflow-hidden">
-                                <img src={item.image} 
-                                alt={item.name} className="absolute w-full h-full top-0 left-0 right-0 bottom-0 object-cover" loading="lazy"/>
+                                <Image src={item.image || ""} 
+                                alt={item.name} fill className="object-cover"/>
                             </div>
 
                             {/* Name */}

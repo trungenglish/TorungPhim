@@ -4,6 +4,7 @@ import { useScrolled } from "@/hooks/useScrolled";
 import MobileButtons from "./MobileButtons";
 import MobileSearch from "./MobileSearch";
 import Link from "next/link";
+import Image from "next/image";
 import SearchBar from "./SearchBar";
 import NavBar from "./NavBar";
 import AppDownloadCTA from "./AppDownloadCTA";
@@ -42,10 +43,13 @@ const Header = () => {
 
         {/* Logo */}
         <Link href="/" className="shrink-0 relative z-[3]">
-          <img
+          <Image
             src="https://www.rophim.mx/images/logo.svg"
-            alt="logo"
+            alt="TorungPhim Logo"
+            width={160}
+            height={40}
             className="w-auto h-10"
+            unoptimized
           />
         </Link>
 

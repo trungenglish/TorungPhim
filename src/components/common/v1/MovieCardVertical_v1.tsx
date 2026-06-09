@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import MovieBadges from "../MovieBadges";
 
 interface MovieCardVerticalV1Props {
@@ -29,10 +30,10 @@ const MovieCardVertical_v1 = ({type, movie}: MovieCardVerticalV1Props) => {
                     subtitleEp={movie.subtitleEp}
                 />
 
-                <img alt="Movie" 
+                <Image alt={movie.name} 
                     src={movie.image} 
-                    loading="lazy" 
-                    className="absolute inset-0 w-full h-full object-cover"
+                    fill 
+                    className="object-cover"
                 /> 
             </Link> 
 

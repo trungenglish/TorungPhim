@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { useState } from "react";
 import type { Swiper as SwiperClass } from "swiper";
 import HeroSlideContent from "./HeroSlideContent";
+import Image from "next/image";
 
 type HeroSectionProps = {
     movies: {
@@ -62,8 +63,10 @@ const HeroSection = ({ movies }: HeroSectionProps) => {
                     <SwiperSlide key={movie.id}
                         className="relative !h-[45px] cursor-pointer border-2 border-solid border-white rounded-lg overflow-hidden transform scale-100"
                     >
-                        <img src={movie.image}
-                            className="inset-0 w-full h-full object-cover bg-black" />
+                        <Image src={movie.image}
+                            alt={movie.name}
+                            fill
+                            className="object-cover bg-black" />
                     </SwiperSlide>
                 ))}
             </Swiper>
